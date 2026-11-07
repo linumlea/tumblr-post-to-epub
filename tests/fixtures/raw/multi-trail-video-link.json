@@ -1,0 +1,392 @@
+{
+  "fixtureVersion": 1,
+  "sourceCapture": "post17.json",
+  "sanitized": true,
+  "privacy": "Removed React Query/user/session/placement/ad/community membership data from raw capture.",
+  "routeName": "peepr-blog-permalink",
+  "posts": [
+    {
+      "objectType": "post",
+      "type": "blocks",
+      "originalType": "regular",
+      "isBlocksPostFormat": true,
+      "id": "832632261371363328",
+      "idString": "832632261371363328",
+      "blogName": "caelanthe",
+      "postUrl": "https://caelanthe.tumblr.com/post/832632261371363328",
+      "parentPostUrl": "https://www.tumblr.com/verltei/832624043843895296",
+      "canonicalUrl": "https://www.tumblr.com/long-delirious-burning-blue/800833633562902528/the-artist-is-simon-berger-and-hes-still-doing",
+      "slug": "",
+      "date": "2026-11-07 14:00:02 GMT",
+      "timestamp": 1794060002,
+      "state": "published",
+      "tags": [],
+      "tagsV2": [],
+      "summary": "",
+      "content": [],
+      "layout": [],
+      "trail": [
+        {
+          "content": [
+            {
+              "type": "video",
+              "provider": "tumblr",
+              "url": "https://va.media.tumblr.com/tumblr_t3za7e7gmY1v4wf7r.mp4",
+              "media": {
+                "url": "https://va.media.tumblr.com/tumblr_t3za7e7gmY1v4wf7r.mp4",
+                "type": "video/mp4",
+                "width": 482,
+                "height": 854
+              },
+              "poster": [
+                {
+                  "url": "https://64.media.tumblr.com/tumblr_t3za7e7gmY1v4wf7r_frame1.jpg",
+                  "type": "image/jpeg",
+                  "width": 482,
+                  "height": 854
+                }
+              ],
+              "filmstrip": {
+                "url": "https://64.media.tumblr.com/previews/tumblr_t3za7e7gmY1v4wf7r_filmstrip.jpg",
+                "type": "image/jpeg",
+                "width": 2000,
+                "height": 357
+              }
+            }
+          ],
+          "layout": [],
+          "post": {
+            "id": "797132163487334400",
+            "timestamp": 1760204471,
+            "isCommercial": false
+          },
+          "blog": {
+            "avatar": [
+              {
+                "width": 512,
+                "height": 512,
+                "url": "https://64.media.tumblr.com/avatar_c02afb6fa5e7_512.pnj",
+                "accessories": []
+              },
+              {
+                "width": 128,
+                "height": 128,
+                "url": "https://64.media.tumblr.com/avatar_c02afb6fa5e7_128.pnj",
+                "accessories": []
+              },
+              {
+                "width": 96,
+                "height": 96,
+                "url": "https://64.media.tumblr.com/avatar_c02afb6fa5e7_96.pnj",
+                "accessories": []
+              },
+              {
+                "width": 64,
+                "height": 64,
+                "url": "https://64.media.tumblr.com/avatar_c02afb6fa5e7_64.pnj",
+                "accessories": []
+              }
+            ],
+            "blogViewUrl": "https://www.tumblr.com/walerihq",
+            "canBeFollowed": true,
+            "canShowBadges": true,
+            "canSubscribe": false,
+            "descriptionNpf": [
+              {
+                "type": "text",
+                "text": "Жизнь прекрасна во всех своих проявлениях. Не забывайте об этом ни на минуту!"
+              }
+            ],
+            "followed": false,
+            "isAdult": false,
+            "isMember": false,
+            "name": "walerihq",
+            "subscribed": false,
+            "theme": {
+              "headerFullWidth": 1008,
+              "headerFullHeight": 1680,
+              "headerFocusWidth": 767,
+              "headerFocusHeight": 432,
+              "avatarShape": "square",
+              "backgroundColor": "#24C2FF",
+              "bodyFont": "Helvetica Neue",
+              "headerBounds": "195,767,627,0",
+              "headerImage": "https://64.media.tumblr.com/fa0da047565b3061cd7a4d9dc1144284/890a3cdcb92db3d0-e1/s1008x1680/380456ef3bbb0eeee6ed4174fc8f06d6397af006.jpg",
+              "headerImageFocused": "https://64.media.tumblr.com/fa0da047565b3061cd7a4d9dc1144284/890a3cdcb92db3d0-e1/s2048x3072_c0,11607,76091,37321/276270f30de4fd6a161453d1d799fe1a29184ce8.jpg",
+              "headerImagePoster": "",
+              "headerImageScaled": "https://64.media.tumblr.com/fa0da047565b3061cd7a4d9dc1144284/890a3cdcb92db3d0-e1/s2048x3072/5de5203d8f1ebbfb1c056c35f4932868dcebc576.jpg",
+              "headerStretch": true,
+              "linkColor": "#4B555B",
+              "showAvatar": true,
+              "showDescription": true,
+              "showHeaderImage": true,
+              "showTitle": true,
+              "titleColor": "#444444",
+              "titleFont": "Sans Serif",
+              "titleFontWeight": "bold"
+            },
+            "title": "Мужской интерес!",
+            "tumblrmartAccessories": {
+              "badges": [
+                {
+                  "productGroup": "601-post-views",
+                  "urls": [
+                    "https://assets.tumblr.com/images/tumblrmart/badges/601-post-views/1.png?_v=ddd767ad00b4e9dcdf5523d756e1ef7d"
+                  ],
+                  "destinationUrl": "https://www.tumblr.com/settings/blog/caelanthe/accessories/earn"
+                }
+              ],
+              "blueCheckmarkCount": 0,
+              "interactionBadgeIconLimit": 1
+            },
+            "url": "https://www.tumblr.com/walerihq",
+            "uuid": "t:ozkHOotGX6VDAeoEkdEMCg",
+            "shareLikes": false,
+            "shareFollowing": false,
+            "allowSearchIndexing": true,
+            "ask": false,
+            "isBlockedFromPrimary": false,
+            "shouldBlur": false,
+            "isAdultLastReporter": null,
+            "active": true,
+            "showFollowAction": true
+          }
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "As a research scientist who studies making very precise modifications/damage to glass with lasers, I cannot describe the level of sheer fucking skill and practice which must go into this."
+            }
+          ],
+          "layout": [],
+          "post": {
+            "id": "800619062845685760",
+            "timestamp": 1763529837,
+            "isCommercial": false
+          },
+          "blog": {
+            "avatar": [
+              {
+                "width": 512,
+                "height": 512,
+                "url": "https://64.media.tumblr.com/avatar_7f32c44337df_512.pnj",
+                "accessories": []
+              },
+              {
+                "width": 128,
+                "height": 128,
+                "url": "https://64.media.tumblr.com/avatar_7f32c44337df_128.pnj",
+                "accessories": []
+              },
+              {
+                "width": 96,
+                "height": 96,
+                "url": "https://64.media.tumblr.com/avatar_7f32c44337df_96.pnj",
+                "accessories": []
+              },
+              {
+                "width": 64,
+                "height": 64,
+                "url": "https://64.media.tumblr.com/avatar_7f32c44337df_64.pnj",
+                "accessories": []
+              }
+            ],
+            "blogViewUrl": "https://www.tumblr.com/crazy-pages",
+            "canBeFollowed": true,
+            "canShowBadges": true,
+            "canSubscribe": false,
+            "descriptionNpf": [
+              {
+                "type": "text",
+                "text": "He/him, bi-ace, early 30s. I originally started this blog over a decade ago to vent in a safe environment about some mental health issues. Then along the way got clocked upside the head with the realization that I was way less socially aware than I thought I was, and decided to stay for the social justice education, the positivity, and the friends I made."
+              }
+            ],
+            "followed": false,
+            "isAdult": false,
+            "isMember": false,
+            "name": "crazy-pages",
+            "subscribed": false,
+            "theme": {
+              "headerFullWidth": 3000,
+              "headerFullHeight": 1055,
+              "avatarShape": "square",
+              "backgroundColor": "#FAFAFA",
+              "bodyFont": "Helvetica Neue",
+              "headerBounds": "",
+              "headerImage": "https://64.media.tumblr.com/3a28ccdf062e25beef2d1a3656c14c24/f3ef55d3a62b63e0-47/s3000x1055/1345bf558aa3697243623c40694ca6f6ae3de0e4.png",
+              "headerImageFocused": "https://64.media.tumblr.com/3a28ccdf062e25beef2d1a3656c14c24/f3ef55d3a62b63e0-47/s2048x3072/320194f5c403d1d316bf6aa8f0219963c6d9f233.png",
+              "headerImagePoster": "",
+              "headerImageScaled": "https://64.media.tumblr.com/3a28ccdf062e25beef2d1a3656c14c24/f3ef55d3a62b63e0-47/s2048x3072/320194f5c403d1d316bf6aa8f0219963c6d9f233.png",
+              "headerStretch": true,
+              "linkColor": "#529ECC",
+              "showAvatar": true,
+              "showDescription": true,
+              "showHeaderImage": true,
+              "showTitle": true,
+              "titleColor": "#444444",
+              "titleFont": "Sans Serif",
+              "titleFontWeight": "bold"
+            },
+            "title": "Crazy Pages",
+            "tumblrmartAccessories": {
+              "badges": [
+                {
+                  "productGroup": "blue-checkmark",
+                  "urls": [
+                    "https://assets.tumblr.com/images/tumblrmart/badges/blue-checkmark/1.png?_v=f270bb99b46e07a8dbc526087895515c",
+                    "https://assets.tumblr.com/images/tumblrmart/badges/blue-checkmark/1.png?_v=f270bb99b46e07a8dbc526087895515c"
+                  ],
+                  "destinationUrl": "https://tumblr.com/tumblrmart/blue-checkmark"
+                }
+              ],
+              "blueCheckmarkCount": 1,
+              "interactionBadgeIconLimit": 2
+            },
+            "url": "https://crazy-pages.tumblr.com/",
+            "uuid": "t:-N0liSMZMuio-tH173Gumg",
+            "shareLikes": false,
+            "shareFollowing": false,
+            "allowSearchIndexing": true,
+            "ask": true,
+            "isBlockedFromPrimary": false,
+            "shouldBlur": false,
+            "isAdultLastReporter": null,
+            "active": true,
+            "showFollowAction": false
+          }
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "The artist is Simon Berger, and he’s still doing cool shit!",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 37,
+                  "end": 48,
+                  "url": "https://mymodernmet.com/simon-berger-glass-art/"
+                }
+              ]
+            }
+          ],
+          "layout": [],
+          "post": {
+            "id": "800833633562902528",
+            "timestamp": 1763734468,
+            "isCommercial": false
+          },
+          "blog": {
+            "avatar": [
+              {
+                "width": 512,
+                "height": 512,
+                "url": "https://64.media.tumblr.com/avatar_159976c14e96_512.pnj",
+                "accessories": []
+              },
+              {
+                "width": 128,
+                "height": 128,
+                "url": "https://64.media.tumblr.com/avatar_159976c14e96_128.pnj",
+                "accessories": []
+              },
+              {
+                "width": 96,
+                "height": 96,
+                "url": "https://64.media.tumblr.com/avatar_159976c14e96_96.pnj",
+                "accessories": []
+              },
+              {
+                "width": 64,
+                "height": 64,
+                "url": "https://64.media.tumblr.com/avatar_159976c14e96_64.pnj",
+                "accessories": []
+              }
+            ],
+            "blogViewUrl": "https://www.tumblr.com/long-delirious-burning-blue",
+            "canBeFollowed": true,
+            "canShowBadges": true,
+            "canSubscribe": false,
+            "descriptionNpf": [
+              {
+                "type": "text",
+                "text": "Tumbling there, I’ve chased the shouting winds along"
+              }
+            ],
+            "followed": false,
+            "isAdult": false,
+            "isMember": false,
+            "name": "long-delirious-burning-blue",
+            "subscribed": false,
+            "theme": {
+              "headerFullWidth": 2048,
+              "headerFullHeight": 1536,
+              "headerFocusWidth": 2048,
+              "headerFocusHeight": 1152,
+              "avatarShape": "square",
+              "backgroundColor": "#FAFAFA",
+              "bodyFont": "Helvetica Neue",
+              "headerBounds": "0,2048,1152,0",
+              "headerImage": "https://64.media.tumblr.com/0302f84483de9acbafb216fcf3580311/f6a776fb394e8c52-2c/s2048x1536/170fe8f7051a2033ea8e8e211d851d038bf9a2d6.jpg",
+              "headerImageFocused": "https://64.media.tumblr.com/0302f84483de9acbafb216fcf3580311/f6a776fb394e8c52-2c/s2048x3072_c0,0,100000,75000/a42c0602c877ece168e02482ac654f66e64bd8ee.jpg",
+              "headerImagePoster": "",
+              "headerImageScaled": "https://64.media.tumblr.com/0302f84483de9acbafb216fcf3580311/f6a776fb394e8c52-2c/s2048x3072/55b2f4fe91c943d530a8b84ee9d4761d26fcf1b5.jpg",
+              "headerStretch": true,
+              "linkColor": "#529ECC",
+              "showAvatar": true,
+              "showDescription": true,
+              "showHeaderImage": true,
+              "showTitle": true,
+              "titleColor": "#444444",
+              "titleFont": "Gibson",
+              "titleFontWeight": "bold"
+            },
+            "title": "Up! Up the long delirious burning blue",
+            "tumblrmartAccessories": {},
+            "url": "https://long-delirious-burning-blue.tumblr.com/",
+            "uuid": "t:EL7G_GiystmwmWqtcj5TKQ",
+            "shareLikes": true,
+            "shareFollowing": false,
+            "allowSearchIndexing": false,
+            "ask": true,
+            "isBlockedFromPrimary": false,
+            "shouldBlur": false,
+            "isAdultLastReporter": null,
+            "active": true,
+            "showFollowAction": false
+          }
+        }
+      ],
+      "rebloggedFromId": "832624043843895296",
+      "rebloggedFromUrl": "https://verltei.tumblr.com/post/832624043843895296",
+      "rebloggedFromName": "verltei",
+      "rebloggedFromUuid": "t:Ms5uYaROWWC48_ZqOPC38w",
+      "rebloggedRootId": "797132163487334400",
+      "rebloggedRootUrl": "https://www.tumblr.com/walerihq/797132163487334400",
+      "rebloggedRootName": "walerihq",
+      "rebloggedRootUuid": "t:ozkHOotGX6VDAeoEkdEMCg",
+      "communityLabels": {
+        "hasCommunityLabel": false,
+        "lastReporter": "author",
+        "categories": [],
+        "hasCommunityLabelOverride": false,
+        "overriddenCategories": []
+      },
+      "isNsfw": false,
+      "classification": "clean",
+      "blog": {
+        "name": "caelanthe",
+        "title": "hi im Cael",
+        "url": "https://caelanthe.tumblr.com/",
+        "uuid": "t:Ip0MimF7yYxE7I5RvLeGsA",
+        "descriptionNpf": [
+          {
+            "type": "text",
+            "text": "Cael, 32, fine with she/they prounouns, Polish.  im very normal about haikyuu. currently obsessed with healymarch"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "fixtureVersion": 1,
+  "sourceCapture": "hand-crafted",
+  "sanitized": true,
+  "privacy": "Synthetic fixture; no private data.",
+  "routeName": "synthetic",
+  "posts": [
+    {
+      "objectType": "post",
+      "type": "blocks",
+      "originalType": "regular",
+      "id": "synthetic-unknown-1",
+      "idString": "synthetic-unknown-1",
+      "blogName": "fixture-blog",
+      "postUrl": "https://fixture-blog.tumblr.com/post/synthetic-unknown-1",
+      "canonicalUrl": "https://www.tumblr.com/fixture-blog/synthetic-unknown-1",
+      "slug": "synthetic-unknown",
+      "date": "2026-01-01 00:00:00 GMT",
+      "timestamp": 1767225600,
+      "state": "published",
+      "tags": [
+        "fixture"
+      ],
+      "summary": "Unknown block fallback fixture",
+      "content": [
+        {
+          "type": "text",
+          "text": "Known text before unknown block."
+        },
+        {
+          "type": "mystery_block_2099",
+          "foo": "bar",
+          "nested": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Known text after unknown block."
+        }
+      ],
+      "layout": [],
+      "trail": [],
+      "blog": {
+        "name": "fixture-blog",
+        "title": "Fixture Blog",
+        "url": "https://fixture-blog.tumblr.com/",
+        "uuid": "t:fixture"
+      }
+    }
+  ]
+}

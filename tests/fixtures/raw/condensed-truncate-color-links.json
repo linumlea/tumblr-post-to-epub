@@ -1,0 +1,1607 @@
+{
+  "fixtureVersion": 1,
+  "sourceCapture": "post22.json",
+  "sanitized": true,
+  "privacy": "Removed React Query/user/session/placement/ad/community membership data from raw capture.",
+  "routeName": "peepr-blog-permalink",
+  "posts": [
+    {
+      "objectType": "post",
+      "type": "blocks",
+      "originalType": "regular",
+      "isBlocksPostFormat": true,
+      "id": "832567782432440320",
+      "idString": "832567782432440320",
+      "blogName": "caelanthe",
+      "postUrl": "https://caelanthe.tumblr.com/post/832567782432440320",
+      "parentPostUrl": "https://www.tumblr.com/peachdoxie/832566484726333440",
+      "canonicalUrl": "https://www.tumblr.com/commentcember/832491928337743872/commentcember-2026-prompts-are-here",
+      "slug": "",
+      "date": "2026-11-06 20:55:10 GMT",
+      "timestamp": 1793998510,
+      "state": "published",
+      "tags": [],
+      "tagsV2": [],
+      "summary": "Commentcember 2026 prompts are here!",
+      "content": [],
+      "layout": [],
+      "trail": [
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Commentcember 2026 prompts are here!",
+              "subtype": "heading1",
+              "formatting": [
+                {
+                  "type": "bold",
+                  "start": 13,
+                  "end": 14
+                },
+                {
+                  "type": "color",
+                  "start": 0,
+                  "end": 7,
+                  "hex": "#7c5cff"
+                },
+                {
+                  "type": "color",
+                  "start": 7,
+                  "end": 13,
+                  "hex": "#00b8ff"
+                },
+                {
+                  "type": "bold",
+                  "start": 0,
+                  "end": 7
+                },
+                {
+                  "type": "bold",
+                  "start": 7,
+                  "end": 13
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "A lot of us are using the AO3 downtime in November both to write new fic and read old. So what happens in December when AO3 is back up and your favorite fanfic authors are posting again? ",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 26,
+                  "end": 50,
+                  "url": "https://www.tumblr.com/ao3org/831831076461756416/we-estimate-that-service-restoration-for-ao3-will"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Commentcember, that's what! ",
+              "subtype": "heading2",
+              "formatting": [
+                {
+                  "type": "italic",
+                  "start": 7,
+                  "end": 13
+                },
+                {
+                  "type": "italic",
+                  "start": 0,
+                  "end": 7
+                },
+                {
+                  "type": "color",
+                  "start": 0,
+                  "end": 7,
+                  "hex": "#7c5cff"
+                },
+                {
+                  "type": "color",
+                  "start": 7,
+                  "end": 13,
+                  "hex": "#00b8ff"
+                },
+                {
+                  "type": "bold",
+                  "start": 0,
+                  "end": 7
+                },
+                {
+                  "type": "bold",
+                  "start": 7,
+                  "end": 13
+                },
+                {
+                  "type": "italic",
+                  "start": 13,
+                  "end": 28
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "You'll find your daily commenting prompts below for December 1-31, along with a handful of alternate/bonus prompts. Use these to find fics and leave comments. You can leave as many comments as you want! "
+            },
+            {
+              "type": "image",
+              "media": [
+                {
+                  "mediaKey": "f375d909e1ca49a8b5a8815fbb22253b:af17913c8c374cc8-90",
+                  "type": "image/png",
+                  "width": 498,
+                  "height": 700,
+                  "url": "https://64.media.tumblr.com/f375d909e1ca49a8b5a8815fbb22253b/af17913c8c374cc8-90/s500x750/b400fc99f6aa21b0583bf4e42835338e9f0aec2e.pnj",
+                  "hasOriginalDimensions": true
+                },
+                {
+                  "mediaKey": "f375d909e1ca49a8b5a8815fbb22253b:af17913c8c374cc8-90",
+                  "type": "image/png",
+                  "width": 400,
+                  "height": 562,
+                  "url": "https://64.media.tumblr.com/f375d909e1ca49a8b5a8815fbb22253b/af17913c8c374cc8-90/s400x600/e4d8058c7a46b168f50aca40194417c0e717fd62.pnj"
+                },
+                {
+                  "mediaKey": "f375d909e1ca49a8b5a8815fbb22253b:af17913c8c374cc8-90",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 351,
+                  "url": "https://64.media.tumblr.com/f375d909e1ca49a8b5a8815fbb22253b/af17913c8c374cc8-90/s250x400/c3325f341ed9dafe255c36850cacfc652b7c2ca4.pnj"
+                },
+                {
+                  "mediaKey": "f375d909e1ca49a8b5a8815fbb22253b:af17913c8c374cc8-90",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 250,
+                  "url": "https://64.media.tumblr.com/f375d909e1ca49a8b5a8815fbb22253b/af17913c8c374cc8-90/s250x250_c1/b22d6280bc324cebe55b85e601587960708fd7aa.pnj",
+                  "cropped": true
+                },
+                {
+                  "mediaKey": "f375d909e1ca49a8b5a8815fbb22253b:af17913c8c374cc8-90",
+                  "type": "image/png",
+                  "width": 100,
+                  "height": 141,
+                  "url": "https://64.media.tumblr.com/f375d909e1ca49a8b5a8815fbb22253b/af17913c8c374cc8-90/s100x200/94f017509a1d20bedbfeae375039d0fc2f325b9b.pnj"
+                },
+                {
+                  "mediaKey": "f375d909e1ca49a8b5a8815fbb22253b:af17913c8c374cc8-90",
+                  "type": "image/png",
+                  "width": 75,
+                  "height": 75,
+                  "url": "https://64.media.tumblr.com/f375d909e1ca49a8b5a8815fbb22253b/af17913c8c374cc8-90/s75x75_c1/086857b02f5940933dd076a041ff54de309424c9.pnj",
+                  "cropped": true
+                }
+              ],
+              "colors": {
+                "c0": "002544",
+                "c1": "012849",
+                "c2": "094365",
+                "c3": "125276",
+                "c4": "0c2874"
+              },
+              "altText": "Commentcember 2026 Prompt List Week 1\n1. Leave a heart emoji in your favorite color ❤🧡💛💚💙💜  \n2. Rereading a fic? Leave \"Reread kudos!\"   \n3. Comment on a drabble. To filter works for drabbles, search within results for \"words:100\".  \n4. Comment on an anonymous work! Any anonymous work! Search within results for \"creators: anonymous\" to find one \n5. Comment on a piece of fanart! Try filtering for works tagged as \"fanart\" or search within results for \"words<10\"."
+            },
+            {
+              "type": "image",
+              "media": [
+                {
+                  "mediaKey": "0927a4054f66356966269643f088cfd2:af17913c8c374cc8-b5",
+                  "type": "image/png",
+                  "width": 498,
+                  "height": 700,
+                  "url": "https://64.media.tumblr.com/0927a4054f66356966269643f088cfd2/af17913c8c374cc8-b5/s500x750/54e5f901c4fd880d1064f111dfff1fb324067ed6.pnj",
+                  "hasOriginalDimensions": true
+                },
+                {
+                  "mediaKey": "0927a4054f66356966269643f088cfd2:af17913c8c374cc8-b5",
+                  "type": "image/png",
+                  "width": 400,
+                  "height": 562,
+                  "url": "https://64.media.tumblr.com/0927a4054f66356966269643f088cfd2/af17913c8c374cc8-b5/s400x600/7ed655cc4337f1e5beaf8806225b97beb69d47f7.pnj"
+                },
+                {
+                  "mediaKey": "0927a4054f66356966269643f088cfd2:af17913c8c374cc8-b5",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 351,
+                  "url": "https://64.media.tumblr.com/0927a4054f66356966269643f088cfd2/af17913c8c374cc8-b5/s250x400/4da21ce45fa0fc491874864175d112452ed7d81c.pnj"
+                },
+                {
+                  "mediaKey": "0927a4054f66356966269643f088cfd2:af17913c8c374cc8-b5",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 250,
+                  "url": "https://64.media.tumblr.com/0927a4054f66356966269643f088cfd2/af17913c8c374cc8-b5/s250x250_c1/f81a6f1a289d26d7aacec64e5a7d3ee35108781a.pnj",
+                  "cropped": true
+                },
+                {
+                  "mediaKey": "0927a4054f66356966269643f088cfd2:af17913c8c374cc8-b5",
+                  "type": "image/png",
+                  "width": 100,
+                  "height": 141,
+                  "url": "https://64.media.tumblr.com/0927a4054f66356966269643f088cfd2/af17913c8c374cc8-b5/s100x200/0586702db64f79534ac733ebe3548089524ff715.pnj"
+                },
+                {
+                  "mediaKey": "0927a4054f66356966269643f088cfd2:af17913c8c374cc8-b5",
+                  "type": "image/png",
+                  "width": 75,
+                  "height": 75,
+                  "url": "https://64.media.tumblr.com/0927a4054f66356966269643f088cfd2/af17913c8c374cc8-b5/s75x75_c1/95494ed02a89cff3a9deaaaeaa6f1f6eda75880a.pnj",
+                  "cropped": true
+                }
+              ],
+              "colors": {
+                "c0": "002545",
+                "c1": "012848",
+                "c2": "04275c",
+                "c3": "185a7e",
+                "c4": "0d2876"
+              },
+              "altText": "Commentcember 2026 Prompt List Week 2\n6. Comment on a work on the second page of a tag. Doesn't matter what you sort by, as long as the fic has dropped off the first page. \n7. Use <blockquote> to highlight something that made you laugh and let the author know how funny it was! \n8. Dealer's choice: Comment 😭😭😭 on an angst fic, or ❤️❤️❤️ on a fluff fic. \n(Or 🔥🔥🔥 on a smut fic for adults.)\n9. Reread your favorite fix-it fic and leave a comment. (In a fandom where canon is perfect, so there's nothing to fix? Check out the alternate prompts.) \n10. Comment on a oneshot. Search within results for \"expected_number_of_chapters: 1\" to find one. \n11. Comment on a WIP. Any work in progress! Filter for works that are Incomplete.\n12. Find a songfic, read it, and leave a comment. You might even find a new favorite song in the process! Filter using the \"songfic\" tag."
+            },
+            {
+              "type": "image",
+              "media": [
+                {
+                  "mediaKey": "ff3b808a2c6a80c04f564db080f60aa8:af17913c8c374cc8-74",
+                  "type": "image/png",
+                  "width": 498,
+                  "height": 700,
+                  "url": "https://64.media.tumblr.com/ff3b808a2c6a80c04f564db080f60aa8/af17913c8c374cc8-74/s500x750/f6dd166027fce075f12fbf960b13f29b9a171893.pnj",
+                  "hasOriginalDimensions": true
+                },
+                {
+                  "mediaKey": "ff3b808a2c6a80c04f564db080f60aa8:af17913c8c374cc8-74",
+                  "type": "image/png",
+                  "width": 400,
+                  "height": 562,
+                  "url": "https://64.media.tumblr.com/ff3b808a2c6a80c04f564db080f60aa8/af17913c8c374cc8-74/s400x600/68fb668bc6b7cfd431ed067713b8a69b456732d5.pnj"
+                },
+                {
+                  "mediaKey": "ff3b808a2c6a80c04f564db080f60aa8:af17913c8c374cc8-74",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 351,
+                  "url": "https://64.media.tumblr.com/ff3b808a2c6a80c04f564db080f60aa8/af17913c8c374cc8-74/s250x400/dee53c59f11e45763fd51817a97aefb1eb987fcd.pnj"
+                },
+                {
+                  "mediaKey": "ff3b808a2c6a80c04f564db080f60aa8:af17913c8c374cc8-74",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 250,
+                  "url": "https://64.media.tumblr.com/ff3b808a2c6a80c04f564db080f60aa8/af17913c8c374cc8-74/s250x250_c1/b10b0a505c57b3af0f7d757523b5bcc9664c40c5.pnj",
+                  "cropped": true
+                },
+                {
+                  "mediaKey": "ff3b808a2c6a80c04f564db080f60aa8:af17913c8c374cc8-74",
+                  "type": "image/png",
+                  "width": 100,
+                  "height": 141,
+                  "url": "https://64.media.tumblr.com/ff3b808a2c6a80c04f564db080f60aa8/af17913c8c374cc8-74/s100x200/fb44896207b9b5ae6f491099873132e9d1a30a03.pnj"
+                },
+                {
+                  "mediaKey": "ff3b808a2c6a80c04f564db080f60aa8:af17913c8c374cc8-74",
+                  "type": "image/png",
+                  "width": 75,
+                  "height": 75,
+                  "url": "https://64.media.tumblr.com/ff3b808a2c6a80c04f564db080f60aa8/af17913c8c374cc8-74/s75x75_c1/7604a9bdf77c38d7b1522536e4d83ac0c797355a.pnj",
+                  "cropped": true
+                }
+              ],
+              "colors": {
+                "c0": "012d4d",
+                "c1": "093960",
+                "c2": "1b4a77",
+                "c3": "19597d",
+                "c4": "262ba0"
+              },
+              "altText": "Commentcember 2026 Prompt List Week 3\n13. Comment on a fic that's over 1 year old. (Bonus points if it's even older!) Sort by Date Updated and go to the last page. Alternatively, search within results for \"sort:>updated\". \n14. Copy your favorite line of dialogue to include in a <blockquote>, and explain why you liked it!\n15. Pick 3 different emojis and leave those as your comment! 👀💻😎\n16. Reread your favorite AU (whether that's Mundane, Role Reversal, or Omegaverse), and let the writer know what you liked about that version of those characters. \n17. Comment on a two chapter work on both chapters. Search within results for \"expected_number_of_chapters: 2\". \n18. Leave a comment on an archive-locked fic! Search within results for \"restricted: true\" to find one. (No account? Swap to an alternate prompt.) \n19. Find a podfic by filtering for \"podfic\". Listen and leave a comment!"
+            },
+            {
+              "type": "image",
+              "media": [
+                {
+                  "mediaKey": "d7086f48042f36d8bc80560c9c0bb256:af17913c8c374cc8-03",
+                  "type": "image/png",
+                  "width": 498,
+                  "height": 700,
+                  "url": "https://64.media.tumblr.com/d7086f48042f36d8bc80560c9c0bb256/af17913c8c374cc8-03/s500x750/8b6e8a238c958587cb5443258ffa654e42ae3c1e.pnj",
+                  "hasOriginalDimensions": true
+                },
+                {
+                  "mediaKey": "d7086f48042f36d8bc80560c9c0bb256:af17913c8c374cc8-03",
+                  "type": "image/png",
+                  "width": 400,
+                  "height": 562,
+                  "url": "https://64.media.tumblr.com/d7086f48042f36d8bc80560c9c0bb256/af17913c8c374cc8-03/s400x600/39b51804ab2fdb52a10995d9b449bb4ba3472a0e.pnj"
+                },
+                {
+                  "mediaKey": "d7086f48042f36d8bc80560c9c0bb256:af17913c8c374cc8-03",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 351,
+                  "url": "https://64.media.tumblr.com/d7086f48042f36d8bc80560c9c0bb256/af17913c8c374cc8-03/s250x400/39ed77646090cbb67ebc1e63e24596948fbf2657.pnj"
+                },
+                {
+                  "mediaKey": "d7086f48042f36d8bc80560c9c0bb256:af17913c8c374cc8-03",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 250,
+                  "url": "https://64.media.tumblr.com/d7086f48042f36d8bc80560c9c0bb256/af17913c8c374cc8-03/s250x250_c1/90f20162018c0b83a193ba3ca099c8ffeb57c73c.pnj",
+                  "cropped": true
+                },
+                {
+                  "mediaKey": "d7086f48042f36d8bc80560c9c0bb256:af17913c8c374cc8-03",
+                  "type": "image/png",
+                  "width": 100,
+                  "height": 141,
+                  "url": "https://64.media.tumblr.com/d7086f48042f36d8bc80560c9c0bb256/af17913c8c374cc8-03/s100x200/6e3d33f69710c85bbc2c3599238f44c0c4d5b496.pnj"
+                },
+                {
+                  "mediaKey": "d7086f48042f36d8bc80560c9c0bb256:af17913c8c374cc8-03",
+                  "type": "image/png",
+                  "width": 75,
+                  "height": 75,
+                  "url": "https://64.media.tumblr.com/d7086f48042f36d8bc80560c9c0bb256/af17913c8c374cc8-03/s75x75_c1/4b9035aa8a1af325933a46bca0738314abf95c25.pnj",
+                  "cropped": true
+                }
+              ],
+              "colors": {
+                "c0": "002545",
+                "c1": "012a4c",
+                "c2": "135275",
+                "c3": "1b5d80",
+                "c4": "46669b"
+              },
+              "altText": "Commentcember 2026 Prompt List Week 4\n20. Leave the first comment on a fic! Sort by comments and go to the last page, or search within results for \"sort:>comments\", then get reading! \n21. <blockquote> a description you loved and let the writer know that it spoke to you. \n22. Comment on a three chapter work with 1 emoji for chapter 1, 2 for chapter 2, and 3 for chapter 3. 🥇✌️☘️🔢 Search within results for \"expected_number_of_chapters: 3\".  \n23. Reread the fic from your earliest bookmark and leave a comment letting the author know why it's stuck with you all this time. \n24. Comment on a fic with more than 5,000 words. Search within results for \"words>5000\". \n25. Leave a comment on an orphaned work. Thank the author for keeping the fic available! Find one by searching within results for \"creators: orphaned_work\".  \n26. Leave a comment on a poem. Filter for \"poetry\" to see how creative other fans can get. "
+            },
+            {
+              "type": "image",
+              "media": [
+                {
+                  "mediaKey": "bbf8c3f4f298e19819ec0ba59a31f25c:af17913c8c374cc8-0a",
+                  "type": "image/png",
+                  "width": 498,
+                  "height": 700,
+                  "url": "https://64.media.tumblr.com/bbf8c3f4f298e19819ec0ba59a31f25c/af17913c8c374cc8-0a/s500x750/6aeeb769647bed31fd37137be12fb1cff8b6aa04.pnj",
+                  "hasOriginalDimensions": true
+                },
+                {
+                  "mediaKey": "bbf8c3f4f298e19819ec0ba59a31f25c:af17913c8c374cc8-0a",
+                  "type": "image/png",
+                  "width": 400,
+                  "height": 562,
+                  "url": "https://64.media.tumblr.com/bbf8c3f4f298e19819ec0ba59a31f25c/af17913c8c374cc8-0a/s400x600/9a8e5e3f63e88614f95dfe12f9d2fd2992738983.pnj"
+                },
+                {
+                  "mediaKey": "bbf8c3f4f298e19819ec0ba59a31f25c:af17913c8c374cc8-0a",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 351,
+                  "url": "https://64.media.tumblr.com/bbf8c3f4f298e19819ec0ba59a31f25c/af17913c8c374cc8-0a/s250x400/717725cb1c86234fa937b0b06056c9bdec10683f.pnj"
+                },
+                {
+                  "mediaKey": "bbf8c3f4f298e19819ec0ba59a31f25c:af17913c8c374cc8-0a",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 250,
+                  "url": "https://64.media.tumblr.com/bbf8c3f4f298e19819ec0ba59a31f25c/af17913c8c374cc8-0a/s250x250_c1/db3caa6478aab8ac194bb4093b625840541bd679.pnj",
+                  "cropped": true
+                },
+                {
+                  "mediaKey": "bbf8c3f4f298e19819ec0ba59a31f25c:af17913c8c374cc8-0a",
+                  "type": "image/png",
+                  "width": 100,
+                  "height": 141,
+                  "url": "https://64.media.tumblr.com/bbf8c3f4f298e19819ec0ba59a31f25c/af17913c8c374cc8-0a/s100x200/1b2cf64f248da6df210dbf258e240d0d39415f4c.pnj"
+                },
+                {
+                  "mediaKey": "bbf8c3f4f298e19819ec0ba59a31f25c:af17913c8c374cc8-0a",
+                  "type": "image/png",
+                  "width": 75,
+                  "height": 75,
+                  "url": "https://64.media.tumblr.com/bbf8c3f4f298e19819ec0ba59a31f25c/af17913c8c374cc8-0a/s75x75_c1/9aa3d6d095f28638d7871154a95241a81821c8a6.pnj",
+                  "cropped": true
+                }
+              ],
+              "colors": {
+                "c0": "002542",
+                "c1": "043155",
+                "c2": "1a5c80",
+                "c3": "3a6195",
+                "c4": "22507e"
+              },
+              "altText": "Commentcember 2026 Prompt List Week 5\n27. Read a fic imported to the Archive through the Open Doors Project. Browse the online archives that have been imported to check if there's one for a fandom you're in. (Can't find one? Swap this prompt for an alternate below.) \n28. Look for parallels, foreshadowing, or callbacks and highlight them with a <blockquote>!  \n29. Read a 5+1 fic and leave 5+1 emojis! 😍😰😱🤬🤔+❤\n30. Download a fic you always come back to and save it privately for personal use. Let the author know you'll be rereading it the next time AO3 has maintenance!\n31. Keep going into the New Year by commenting chapter-by-chapter on your favorite multichapter longfic! Search within results for \"-expected_number_of_chapters: 1\"."
+            },
+            {
+              "type": "image",
+              "media": [
+                {
+                  "mediaKey": "44349d7ca1c77c8ee7b9115bc79bdf68:af17913c8c374cc8-19",
+                  "type": "image/png",
+                  "width": 498,
+                  "height": 700,
+                  "url": "https://64.media.tumblr.com/44349d7ca1c77c8ee7b9115bc79bdf68/af17913c8c374cc8-19/s500x750/6e7ad0c4742b2f3c0248bde77d82f2c56a20d07f.pnj",
+                  "hasOriginalDimensions": true
+                },
+                {
+                  "mediaKey": "44349d7ca1c77c8ee7b9115bc79bdf68:af17913c8c374cc8-19",
+                  "type": "image/png",
+                  "width": 400,
+                  "height": 562,
+                  "url": "https://64.media.tumblr.com/44349d7ca1c77c8ee7b9115bc79bdf68/af17913c8c374cc8-19/s400x600/ef67c21bf391d4b4d0f1b106b02f47dd0dad3b89.pnj"
+                },
+                {
+                  "mediaKey": "44349d7ca1c77c8ee7b9115bc79bdf68:af17913c8c374cc8-19",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 351,
+                  "url": "https://64.media.tumblr.com/44349d7ca1c77c8ee7b9115bc79bdf68/af17913c8c374cc8-19/s250x400/8d2b7de201e2ae5d15fd033dc4179d760d3695d4.pnj"
+                },
+                {
+                  "mediaKey": "44349d7ca1c77c8ee7b9115bc79bdf68:af17913c8c374cc8-19",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 250,
+                  "url": "https://64.media.tumblr.com/44349d7ca1c77c8ee7b9115bc79bdf68/af17913c8c374cc8-19/s250x250_c1/520f8184d529cfee336fda3df4cca2718ab04d0f.pnj",
+                  "cropped": true
+                },
+                {
+                  "mediaKey": "44349d7ca1c77c8ee7b9115bc79bdf68:af17913c8c374cc8-19",
+                  "type": "image/png",
+                  "width": 100,
+                  "height": 141,
+                  "url": "https://64.media.tumblr.com/44349d7ca1c77c8ee7b9115bc79bdf68/af17913c8c374cc8-19/s100x200/9f65c466a2e1a26cc05ef85cc4abf91fa161264a.pnj"
+                },
+                {
+                  "mediaKey": "44349d7ca1c77c8ee7b9115bc79bdf68:af17913c8c374cc8-19",
+                  "type": "image/png",
+                  "width": 75,
+                  "height": 75,
+                  "url": "https://64.media.tumblr.com/44349d7ca1c77c8ee7b9115bc79bdf68/af17913c8c374cc8-19/s75x75_c1/f110e5785d215f6defdae1edd1b1160237d10ce6.pnj",
+                  "cropped": true
+                }
+              ],
+              "colors": {
+                "c0": "002544",
+                "c1": "033152",
+                "c2": "266c90",
+                "c3": "032656",
+                "c4": "0a3a61"
+              },
+              "altText": "Commentcember 2026 Prompt List Bonus\n- Leave a comment in a fic that doesn't have any kudos! Sort by kudos and go to the last page, or search within results for \"sort:>kudos\". \n- Comment on a fic in a series! Search within results for \"series.title: *\". \n- Read a new fic from an old fandom and comment on what drew you in. \n- Comment on a crossover or fusion! Filter for crossovers only, or check out the \"Fusion\" tag. \n- Read a 5 chapter work and leave a different emoji on every single chapter. Search within results for \"expected_number_of_chapters: 5\". \n🥺😶🤯🥳💯 "
+            },
+            {
+              "type": "text",
+              "text": "If you want to share your comments here on tumblr, feel free to screencap them and post them using #commentcember. ",
+              "formatting": [
+                {
+                  "type": "color",
+                  "start": 99,
+                  "end": 107,
+                  "hex": "#7c5cff"
+                },
+                {
+                  "type": "color",
+                  "start": 107,
+                  "end": 113,
+                  "hex": "#00b8ff"
+                },
+                {
+                  "type": "bold",
+                  "start": 99,
+                  "end": 107
+                },
+                {
+                  "type": "bold",
+                  "start": 107,
+                  "end": 113
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Got questions? Check out the Rules & FAQ. ",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 29,
+                  "end": 40,
+                  "url": "https://commentcember.tumblr.com/rules-faq"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Still have questions? The askbox is now open. ",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 26,
+                  "end": 32,
+                  "url": "https://commentcember.tumblr.com/ask"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "You can also find the full list in text form under the read more (complete with handy links to the relevant Fanlore articles)!  "
+            },
+            {
+              "type": "text",
+              "text": "Commentcember 2026 Prompts:",
+              "subtype": "heading2"
+            },
+            {
+              "type": "text",
+              "text": "Leave a heart emoji in your favorite color ❤🧡💛💚💙💜 ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Rereading a fic? Leave \"Reread kudos!\" ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Comment on a drabble. To filter works for drabbles, search within results for \"words:100\". ",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 13,
+                  "end": 20,
+                  "url": "https://fanlore.org/wiki/Drabble"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Comment on an anonymous work! Any anonymous work! Search within results for \"creators: anonymous\" to find one. ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Comment on a piece of fanart! Try filtering for works tagged as \"fanart\" or search within results for \"words<10\". ",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 22,
+                  "end": 28,
+                  "url": "https://fanlore.org/wiki/Fanart"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Comment on a work on the second page of a tag. Doesn't matter what you sort by, as long as the fic has dropped off the first page. ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Use <blockquote> to highlight something that made you laugh and let the author know how funny it was! ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Dealer's choice: Comment 😭😭😭 on an angst fic, or ❤️❤️❤️ on a fluff fic. (Or 🔥🔥🔥 on a smut fic for adults.)",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 61,
+                  "end": 66,
+                  "url": "https://fanlore.org/wiki/Fluff"
+                },
+                {
+                  "type": "link",
+                  "start": 35,
+                  "end": 40,
+                  "url": "https://fanlore.org/wiki/Angst"
+                },
+                {
+                  "type": "link",
+                  "start": 85,
+                  "end": 89,
+                  "url": "https://fanlore.org/wiki/Smut"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Reread your favorite fix-it fic and leave a comment. (In a fandom where canon is perfect, so there's nothing to fix? Check out the alternate prompts.) ",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 21,
+                  "end": 27,
+                  "url": "https://fanlore.org/wiki/Fix-it"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Comment on a oneshot. Search within results for \"expected_number_of_chapters: 1\" to find one. ",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 13,
+                  "end": 20,
+                  "url": "https://fanlore.org/wiki/Standalone"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Comment on a WIP. Any work in progress! Filter for works that are Incomplete.",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 13,
+                  "end": 16,
+                  "url": "https://fanlore.org/wiki/Work_In_Progress"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Find a songfic, read it, and leave a comment. You might even find a new favorite song in the process! Filter using the \"songfic\" tag. ",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 7,
+                  "end": 14,
+                  "url": "https://fanlore.org/wiki/Songfic"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Comment on a fic that's over 1 year old. (Bonus points if it's even older!) Sort by Date Updated and go to the last page. Alternatively, search within results for \"sort:>updated\". ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Copy your favorite line of dialogue to include in a <blockquote>, and explain why you liked it! ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Pick 3 different emojis and leave those as your comment! 👀💻😎",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "italic",
+                  "start": 7,
+                  "end": 16
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Reread your favorite AU (whether that's Mundane, Role Reversal, or Omegaverse), and let the writer know what you liked about that version of those characters. ",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 40,
+                  "end": 47,
+                  "url": "https://fanlore.org/wiki/Mundane_AU"
+                },
+                {
+                  "type": "link",
+                  "start": 67,
+                  "end": 77,
+                  "url": "https://fanlore.org/wiki/Alpha/Beta/Omega"
+                },
+                {
+                  "type": "link",
+                  "start": 49,
+                  "end": 62,
+                  "url": "https://fanlore.org/wiki/Role_Swap"
+                },
+                {
+                  "type": "link",
+                  "start": 21,
+                  "end": 23,
+                  "url": "https://fanlore.org/wiki/Alternate_Universe"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Comment on a two chapter work on both chapters. Search within results for \"expected_number_of_chapters: 2\". ",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "italic",
+                  "start": 33,
+                  "end": 37
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Leave a comment on an archive-locked fic! Search within results for \"restricted: true\" to find one. (No account? Swap to an alternate prompt.)",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Find a podfic by filtering for \"podfic\". Listen and leave a comment! ",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 7,
+                  "end": 13,
+                  "url": "https://fanlore.org/wiki/Podfic"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Leave the first comment on a fic! Sort by comments and go to the last page, or search within results for \"sort:>comments\", then get reading! ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "<blockquote> a description you loved and let the writer know that it spoke to you. ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Comment on a three chapter work with 1 emoji for chapter 1, 2 for chapter 2, and 3 for chapter 3. 🥇✌️☘️🔢 Search within results for \"expected_number_of_chapters: 3\". ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Reread the fic from your earliest bookmark and leave a comment letting the author know why it's stuck with you all this time. ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Comment on a fic with more than 5,000 words. Search within results for \"words>5000\". ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Leave a comment on an orphaned work. Thank the author for keeping the fic available! Find one by searching within results for \"creators: orphaned_work\". ",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 22,
+                  "end": 35,
+                  "url": "https://fanlore.org/wiki/Orphaning_Fanworks"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Leave a comment on a poem. Filter for \"poetry\" to see how creative other fans can get.  ",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 21,
+                  "end": 25,
+                  "url": "https://fanlore.org/wiki/Fanpoetry"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Read a fic imported to the Archive through the Open Doors Project. Browse the online archives that have been imported to check if there's one for a fandom you're in. (Can't find one? Swap this prompt for an alternate below.)",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 78,
+                  "end": 93,
+                  "url": "https://opendoors.transformativeworks.org/en/online-archives/"
+                },
+                {
+                  "type": "link",
+                  "start": 47,
+                  "end": 65,
+                  "url": "https://www.transformativeworks.org/our-projects/open-doors/"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Look for parallels, foreshadowing, or callbacks and highlight them with a <blockquote>! ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Read a 5+1 fic and leave 5+1 emojis! 😍😰😱🤬🤔+❤",
+              "subtype": "ordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 7,
+                  "end": 14,
+                  "url": "https://fanlore.org/wiki/Five_Things"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Download a fic you always come back to and save it privately for personal use. Let the author know you'll be rereading it the next time AO3 has maintenance!",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Keep going into the New Year by commenting chapter-by-chapter on your favorite multichapter longfic! Search within results for \"-expected_number_of_chapters: 1\". ",
+              "subtype": "ordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Bonus/Alternative Prompts:",
+              "subtype": "heading2"
+            },
+            {
+              "type": "text",
+              "text": "Leave a comment in a fic that doesn't have any kudos! Sort by kudos and go to the last page, or search within results for \"sort:>kudos\". ",
+              "subtype": "unordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Comment on a fic in a series! Search within results for \"series.title: *\". ",
+              "subtype": "unordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Read a new fic from an old fandom and comment on what drew you in. ",
+              "subtype": "unordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "Comment on a crossover or fusion! Filter for crossovers only, or check out the \"Fusion\" tag. ",
+              "subtype": "unordered-list-item",
+              "formatting": [
+                {
+                  "type": "link",
+                  "start": 13,
+                  "end": 22,
+                  "url": "https://fanlore.org/wiki/Crossover"
+                },
+                {
+                  "type": "link",
+                  "start": 26,
+                  "end": 32,
+                  "url": "https://fanlore.org/wiki/Fusion_(genre)"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Read a 5 chapter work and leave a different emoji on every single chapter. Search within results for \"expected_number_of_chapters: 5\". 🥺😶🤯🥳💯",
+              "subtype": "unordered-list-item"
+            },
+            {
+              "type": "text",
+              "text": "One Pagers: ",
+              "subtype": "heading2"
+            },
+            {
+              "type": "image",
+              "media": [
+                {
+                  "mediaKey": "ab2f15770a0a18b7765d6fc4d4fca13b:af17913c8c374cc8-10",
+                  "type": "image/png",
+                  "width": 920,
+                  "height": 1629,
+                  "url": "https://64.media.tumblr.com/ab2f15770a0a18b7765d6fc4d4fca13b/af17913c8c374cc8-10/s1280x1920/f25b543d4c4c83608223b1d800c58a4fb2c04ade.pnj",
+                  "hasOriginalDimensions": true
+                },
+                {
+                  "mediaKey": "ab2f15770a0a18b7765d6fc4d4fca13b:af17913c8c374cc8-10",
+                  "type": "image/png",
+                  "width": 542,
+                  "height": 960,
+                  "url": "https://64.media.tumblr.com/ab2f15770a0a18b7765d6fc4d4fca13b/af17913c8c374cc8-10/s640x960/a66944b6d61a0750cd308663939d1afc36758988.pnj"
+                },
+                {
+                  "mediaKey": "ab2f15770a0a18b7765d6fc4d4fca13b:af17913c8c374cc8-10",
+                  "type": "image/png",
+                  "width": 457,
+                  "height": 810,
+                  "url": "https://64.media.tumblr.com/ab2f15770a0a18b7765d6fc4d4fca13b/af17913c8c374cc8-10/s540x810/5b39bbae1cc78925e99959eade4c420d704c295b.pnj"
+                },
+                {
+                  "mediaKey": "ab2f15770a0a18b7765d6fc4d4fca13b:af17913c8c374cc8-10",
+                  "type": "image/png",
+                  "width": 424,
+                  "height": 750,
+                  "url": "https://64.media.tumblr.com/ab2f15770a0a18b7765d6fc4d4fca13b/af17913c8c374cc8-10/s500x750/b2a4220ce54d63e0ab8ace1a52ca5d1cb7fd3bb9.pnj"
+                },
+                {
+                  "mediaKey": "ab2f15770a0a18b7765d6fc4d4fca13b:af17913c8c374cc8-10",
+                  "type": "image/png",
+                  "width": 339,
+                  "height": 600,
+                  "url": "https://64.media.tumblr.com/ab2f15770a0a18b7765d6fc4d4fca13b/af17913c8c374cc8-10/s400x600/9b8aab7acf93450259007e675d7a3b45e3f67437.pnj"
+                },
+                {
+                  "mediaKey": "ab2f15770a0a18b7765d6fc4d4fca13b:af17913c8c374cc8-10",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 250,
+                  "url": "https://64.media.tumblr.com/ab2f15770a0a18b7765d6fc4d4fca13b/af17913c8c374cc8-10/s250x250_c1/504463a004922fbf689c8c8823b7c485ba6af6f6.pnj",
+                  "cropped": true
+                },
+                {
+                  "mediaKey": "ab2f15770a0a18b7765d6fc4d4fca13b:af17913c8c374cc8-10",
+                  "type": "image/png",
+                  "width": 226,
+                  "height": 400,
+                  "url": "https://64.media.tumblr.com/ab2f15770a0a18b7765d6fc4d4fca13b/af17913c8c374cc8-10/s250x400/0d20bc01e3246856ccf7e41b0c57b770ebcafde3.pnj"
+                },
+                {
+                  "mediaKey": "ab2f15770a0a18b7765d6fc4d4fca13b:af17913c8c374cc8-10",
+                  "type": "image/png",
+                  "width": 100,
+                  "height": 177,
+                  "url": "https://64.media.tumblr.com/ab2f15770a0a18b7765d6fc4d4fca13b/af17913c8c374cc8-10/s100x200/58575deae35567da6c82afabcb110a708d953f3c.pnj"
+                },
+                {
+                  "mediaKey": "ab2f15770a0a18b7765d6fc4d4fca13b:af17913c8c374cc8-10",
+                  "type": "image/png",
+                  "width": 75,
+                  "height": 75,
+                  "url": "https://64.media.tumblr.com/ab2f15770a0a18b7765d6fc4d4fca13b/af17913c8c374cc8-10/s75x75_c1/fff760fbd087ec40e395e0f34f08350f12ad3f36.pnj",
+                  "cropped": true
+                }
+              ],
+              "colors": {
+                "c0": "002544",
+                "c1": "053256",
+                "c2": "022d50",
+                "c3": "0e4a6d",
+                "c4": "203091"
+              },
+              "altText": "Commentcember 2026 Full Prompt List with dark teal background. "
+            },
+            {
+              "type": "image",
+              "media": [
+                {
+                  "mediaKey": "0a2341c09d08e5995a2afda0d2d4fb6b:af17913c8c374cc8-f3",
+                  "type": "image/png",
+                  "width": 920,
+                  "height": 1629,
+                  "url": "https://64.media.tumblr.com/0a2341c09d08e5995a2afda0d2d4fb6b/af17913c8c374cc8-f3/s1280x1920/fecddd1556689637b3e42d3e4c171c7a63867d76.pnj",
+                  "hasOriginalDimensions": true
+                },
+                {
+                  "mediaKey": "0a2341c09d08e5995a2afda0d2d4fb6b:af17913c8c374cc8-f3",
+                  "type": "image/png",
+                  "width": 542,
+                  "height": 960,
+                  "url": "https://64.media.tumblr.com/0a2341c09d08e5995a2afda0d2d4fb6b/af17913c8c374cc8-f3/s640x960/c56f3e3315852332821b5d5fd28e833cb944ba30.pnj"
+                },
+                {
+                  "mediaKey": "0a2341c09d08e5995a2afda0d2d4fb6b:af17913c8c374cc8-f3",
+                  "type": "image/png",
+                  "width": 457,
+                  "height": 810,
+                  "url": "https://64.media.tumblr.com/0a2341c09d08e5995a2afda0d2d4fb6b/af17913c8c374cc8-f3/s540x810/78f59a7bf3e720953ac5cabeda16a029f53af339.pnj"
+                },
+                {
+                  "mediaKey": "0a2341c09d08e5995a2afda0d2d4fb6b:af17913c8c374cc8-f3",
+                  "type": "image/png",
+                  "width": 424,
+                  "height": 750,
+                  "url": "https://64.media.tumblr.com/0a2341c09d08e5995a2afda0d2d4fb6b/af17913c8c374cc8-f3/s500x750/37731283ffcc74785295bde167cdf764c787b785.pnj"
+                },
+                {
+                  "mediaKey": "0a2341c09d08e5995a2afda0d2d4fb6b:af17913c8c374cc8-f3",
+                  "type": "image/png",
+                  "width": 339,
+                  "height": 600,
+                  "url": "https://64.media.tumblr.com/0a2341c09d08e5995a2afda0d2d4fb6b/af17913c8c374cc8-f3/s400x600/0f8238695c756ed99f0d9a41ffbdb60064f935ad.pnj"
+                },
+                {
+                  "mediaKey": "0a2341c09d08e5995a2afda0d2d4fb6b:af17913c8c374cc8-f3",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 250,
+                  "url": "https://64.media.tumblr.com/0a2341c09d08e5995a2afda0d2d4fb6b/af17913c8c374cc8-f3/s250x250_c1/34c22f69fd17fd181d24ab207c841c7a039a85fa.pnj",
+                  "cropped": true
+                },
+                {
+                  "mediaKey": "0a2341c09d08e5995a2afda0d2d4fb6b:af17913c8c374cc8-f3",
+                  "type": "image/png",
+                  "width": 226,
+                  "height": 400,
+                  "url": "https://64.media.tumblr.com/0a2341c09d08e5995a2afda0d2d4fb6b/af17913c8c374cc8-f3/s250x400/792f8ab84cd174024e58136523c8185ef196122a.pnj"
+                },
+                {
+                  "mediaKey": "0a2341c09d08e5995a2afda0d2d4fb6b:af17913c8c374cc8-f3",
+                  "type": "image/png",
+                  "width": 100,
+                  "height": 177,
+                  "url": "https://64.media.tumblr.com/0a2341c09d08e5995a2afda0d2d4fb6b/af17913c8c374cc8-f3/s100x200/70a3d999cbc93a3e0c1036739faf722bf95c1767.pnj"
+                },
+                {
+                  "mediaKey": "0a2341c09d08e5995a2afda0d2d4fb6b:af17913c8c374cc8-f3",
+                  "type": "image/png",
+                  "width": 75,
+                  "height": 75,
+                  "url": "https://64.media.tumblr.com/0a2341c09d08e5995a2afda0d2d4fb6b/af17913c8c374cc8-f3/s75x75_c1/bb3c9ff3462d86fa4da3574cc078cce15e7f826b.pnj",
+                  "cropped": true
+                }
+              ],
+              "colors": {
+                "c0": "c5acff",
+                "c1": "b796ff",
+                "c2": "9e9ee3",
+                "c3": "b38cff",
+                "c4": "466ba2"
+              },
+              "altText": "Commentcember 2026 Full Prompt List with light purple background. "
+            },
+            {
+              "type": "image",
+              "media": [
+                {
+                  "mediaKey": "74f8b90d5bb57e5d8f3c406b6e286d45:af17913c8c374cc8-e0",
+                  "type": "image/png",
+                  "width": 920,
+                  "height": 1629,
+                  "url": "https://64.media.tumblr.com/74f8b90d5bb57e5d8f3c406b6e286d45/af17913c8c374cc8-e0/s1280x1920/d98eb8d89d73d5ccc7371687075089194fee7306.pnj",
+                  "hasOriginalDimensions": true
+                },
+                {
+                  "mediaKey": "74f8b90d5bb57e5d8f3c406b6e286d45:af17913c8c374cc8-e0",
+                  "type": "image/png",
+                  "width": 542,
+                  "height": 960,
+                  "url": "https://64.media.tumblr.com/74f8b90d5bb57e5d8f3c406b6e286d45/af17913c8c374cc8-e0/s640x960/4e7413952a143192d08a3c0a739f28ac06e72881.pnj"
+                },
+                {
+                  "mediaKey": "74f8b90d5bb57e5d8f3c406b6e286d45:af17913c8c374cc8-e0",
+                  "type": "image/png",
+                  "width": 457,
+                  "height": 810,
+                  "url": "https://64.media.tumblr.com/74f8b90d5bb57e5d8f3c406b6e286d45/af17913c8c374cc8-e0/s540x810/ac3d96a2e4c6e71cdf369a36f35cd08be8a68542.pnj"
+                },
+                {
+                  "mediaKey": "74f8b90d5bb57e5d8f3c406b6e286d45:af17913c8c374cc8-e0",
+                  "type": "image/png",
+                  "width": 424,
+                  "height": 750,
+                  "url": "https://64.media.tumblr.com/74f8b90d5bb57e5d8f3c406b6e286d45/af17913c8c374cc8-e0/s500x750/911d58f4428626c8ee11f5c10f347b161cb40088.pnj"
+                },
+                {
+                  "mediaKey": "74f8b90d5bb57e5d8f3c406b6e286d45:af17913c8c374cc8-e0",
+                  "type": "image/png",
+                  "width": 339,
+                  "height": 600,
+                  "url": "https://64.media.tumblr.com/74f8b90d5bb57e5d8f3c406b6e286d45/af17913c8c374cc8-e0/s400x600/217717f33bf013fd5a9aa779eb045db3bcd299c5.pnj"
+                },
+                {
+                  "mediaKey": "74f8b90d5bb57e5d8f3c406b6e286d45:af17913c8c374cc8-e0",
+                  "type": "image/png",
+                  "width": 250,
+                  "height": 250,
+                  "url": "https://64.media.tumblr.com/74f8b90d5bb57e5d8f3c406b6e286d45/af17913c8c374cc8-e0/s250x250_c1/2fda91786659e4131c7696200b74c514aeeacf8f.pnj",
+                  "cropped": true
+                },
+                {
+                  "mediaKey": "74f8b90d5bb57e5d8f3c406b6e286d45:af17913c8c374cc8-e0",
+                  "type": "image/png",
+                  "width": 226,
+                  "height": 400,
+                  "url": "https://64.media.tumblr.com/74f8b90d5bb57e5d8f3c406b6e286d45/af17913c8c374cc8-e0/s250x400/4d6bdbe9b6efa21f2bf9329e10416d0ef6241da8.pnj"
+                },
+                {
+                  "mediaKey": "74f8b90d5bb57e5d8f3c406b6e286d45:af17913c8c374cc8-e0",
+                  "type": "image/png",
+                  "width": 100,
+                  "height": 177,
+                  "url": "https://64.media.tumblr.com/74f8b90d5bb57e5d8f3c406b6e286d45/af17913c8c374cc8-e0/s100x200/190d5151270ba8b3a2a79dfec27b354e0bc697ff.pnj"
+                },
+                {
+                  "mediaKey": "74f8b90d5bb57e5d8f3c406b6e286d45:af17913c8c374cc8-e0",
+                  "type": "image/png",
+                  "width": 75,
+                  "height": 75,
+                  "url": "https://64.media.tumblr.com/74f8b90d5bb57e5d8f3c406b6e286d45/af17913c8c374cc8-e0/s75x75_c1/3906ac11c3f5ef459b9cb8e7b7eeffd019f06b3b.pnj",
+                  "cropped": true
+                }
+              ],
+              "colors": {
+                "c0": "93e1ff",
+                "c1": "7eccec",
+                "c2": "7ac0e9",
+                "c3": "56a4c6",
+                "c4": "56a3c5"
+              },
+              "altText": "Commentcember 2026 Full Prompt List with light teal background. "
+            },
+            {
+              "type": "text",
+              "text": "Remember: Be kind. Be honest. Have fun! ",
+              "subtype": "heading1",
+              "formatting": [
+                {
+                  "type": "bold",
+                  "start": 30,
+                  "end": 35
+                },
+                {
+                  "type": "bold",
+                  "start": 35,
+                  "end": 40
+                },
+                {
+                  "type": "italic",
+                  "start": 29,
+                  "end": 30
+                },
+                {
+                  "type": "bold",
+                  "start": 29,
+                  "end": 30
+                },
+                {
+                  "type": "italic",
+                  "start": 30,
+                  "end": 35
+                },
+                {
+                  "type": "italic",
+                  "start": 35,
+                  "end": 40
+                },
+                {
+                  "type": "color",
+                  "start": 30,
+                  "end": 35,
+                  "hex": "#00b8ff"
+                },
+                {
+                  "type": "color",
+                  "start": 35,
+                  "end": 40,
+                  "hex": "#7c5cff"
+                }
+              ]
+            }
+          ],
+          "layout": [
+            {
+              "type": "rows",
+              "display": [
+                {
+                  "blocks": [
+                    0
+                  ]
+                },
+                {
+                  "blocks": [
+                    1
+                  ]
+                },
+                {
+                  "blocks": [
+                    2
+                  ]
+                },
+                {
+                  "blocks": [
+                    3
+                  ]
+                },
+                {
+                  "blocks": [
+                    4,
+                    5
+                  ]
+                },
+                {
+                  "blocks": [
+                    6,
+                    7
+                  ]
+                },
+                {
+                  "blocks": [
+                    8,
+                    9
+                  ]
+                },
+                {
+                  "blocks": [
+                    10
+                  ]
+                },
+                {
+                  "blocks": [
+                    11
+                  ]
+                },
+                {
+                  "blocks": [
+                    12
+                  ]
+                },
+                {
+                  "blocks": [
+                    13
+                  ]
+                },
+                {
+                  "blocks": [
+                    14
+                  ]
+                },
+                {
+                  "blocks": [
+                    15
+                  ]
+                },
+                {
+                  "blocks": [
+                    16
+                  ]
+                },
+                {
+                  "blocks": [
+                    17
+                  ]
+                },
+                {
+                  "blocks": [
+                    18
+                  ]
+                },
+                {
+                  "blocks": [
+                    19
+                  ]
+                },
+                {
+                  "blocks": [
+                    20
+                  ]
+                },
+                {
+                  "blocks": [
+                    21
+                  ]
+                },
+                {
+                  "blocks": [
+                    22
+                  ]
+                },
+                {
+                  "blocks": [
+                    23
+                  ]
+                },
+                {
+                  "blocks": [
+                    24
+                  ]
+                },
+                {
+                  "blocks": [
+                    25
+                  ]
+                },
+                {
+                  "blocks": [
+                    26
+                  ]
+                },
+                {
+                  "blocks": [
+                    27
+                  ]
+                },
+                {
+                  "blocks": [
+                    28
+                  ]
+                },
+                {
+                  "blocks": [
+                    29
+                  ]
+                },
+                {
+                  "blocks": [
+                    30
+                  ]
+                },
+                {
+                  "blocks": [
+                    31
+                  ]
+                },
+                {
+                  "blocks": [
+                    32
+                  ]
+                },
+                {
+                  "blocks": [
+                    33
+                  ]
+                },
+                {
+                  "blocks": [
+                    34
+                  ]
+                },
+                {
+                  "blocks": [
+                    35
+                  ]
+                },
+                {
+                  "blocks": [
+                    36
+                  ]
+                },
+                {
+                  "blocks": [
+                    37
+                  ]
+                },
+                {
+                  "blocks": [
+                    38
+                  ]
+                },
+                {
+                  "blocks": [
+                    39
+                  ]
+                },
+                {
+                  "blocks": [
+                    40
+                  ]
+                },
+                {
+                  "blocks": [
+                    41
+                  ]
+                },
+                {
+                  "blocks": [
+                    42
+                  ]
+                },
+                {
+                  "blocks": [
+                    43
+                  ]
+                },
+                {
+                  "blocks": [
+                    44
+                  ]
+                },
+                {
+                  "blocks": [
+                    45
+                  ]
+                },
+                {
+                  "blocks": [
+                    46
+                  ]
+                },
+                {
+                  "blocks": [
+                    47
+                  ]
+                },
+                {
+                  "blocks": [
+                    48
+                  ]
+                },
+                {
+                  "blocks": [
+                    49
+                  ]
+                },
+                {
+                  "blocks": [
+                    50
+                  ]
+                },
+                {
+                  "blocks": [
+                    51
+                  ]
+                },
+                {
+                  "blocks": [
+                    52
+                  ]
+                },
+                {
+                  "blocks": [
+                    53,
+                    54,
+                    55
+                  ]
+                },
+                {
+                  "blocks": [
+                    56
+                  ]
+                }
+              ],
+              "truncateAfter": 13
+            },
+            {
+              "type": "condensed",
+              "truncateAfter": 13,
+              "blocks": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ]
+            }
+          ],
+          "post": {
+            "id": "832491928337743872",
+            "timestamp": 1793926170,
+            "isCommercial": false
+          },
+          "blog": {
+            "avatar": [
+              {
+                "width": 512,
+                "height": 512,
+                "url": "https://64.media.tumblr.com/3d597b2d7cc084347d1b27213490c02c/b829dd0164a06056-67/s512x512u_c1/fd192bc99c1c006eecd7860a2999146aa68e9ed9.pnj",
+                "accessories": []
+              },
+              {
+                "width": 200,
+                "height": 200,
+                "url": "https://64.media.tumblr.com/3d597b2d7cc084347d1b27213490c02c/b829dd0164a06056-67/s200x200u_c1/49f979287ed1954fd6f86f384cb493e2a83ad9ec.pnj",
+                "accessories": []
+              },
+              {
+                "width": 128,
+                "height": 128,
+                "url": "https://64.media.tumblr.com/3d597b2d7cc084347d1b27213490c02c/b829dd0164a06056-67/s128x128u_c1/a55c92398ab0055f2b5251989851c0f675da5bd0.pnj",
+                "accessories": []
+              },
+              {
+                "width": 96,
+                "height": 96,
+                "url": "https://64.media.tumblr.com/3d597b2d7cc084347d1b27213490c02c/b829dd0164a06056-67/s96x96u_c1/dd1edf044a8a5d9466529cdca63c5d4ad7926484.pnj",
+                "accessories": []
+              },
+              {
+                "width": 64,
+                "height": 64,
+                "url": "https://64.media.tumblr.com/3d597b2d7cc084347d1b27213490c02c/b829dd0164a06056-67/s64x64u_c1/975f9742b818d5b2268514f1fefded8edc38345f.pnj",
+                "accessories": []
+              }
+            ],
+            "blogViewUrl": "https://www.tumblr.com/commentcember",
+            "canBeFollowed": true,
+            "canShowBadges": false,
+            "canSubscribe": false,
+            "descriptionNpf": [
+              {
+                "type": "text",
+                "text": "Commentcember is a month-long commenting challenge running in December to celebrate AO3's return. Leave comments and have fun! "
+              },
+              {
+                "type": "text",
+                "text": "Rules & FAQ",
+                "formatting": [
+                  {
+                    "type": "link",
+                    "start": 0,
+                    "end": 11,
+                    "url": "https://commentcember.tumblr.com/rules-faq"
+                  }
+                ]
+              }
+            ],
+            "followed": false,
+            "isAdult": false,
+            "isMember": false,
+            "name": "commentcember",
+            "subscribed": false,
+            "theme": {
+              "headerFullWidth": 2048,
+              "headerFullHeight": 1152,
+              "headerFocusWidth": 1718,
+              "headerFocusHeight": 1152,
+              "avatarShape": "circle",
+              "backgroundColor": "#014a6d",
+              "bodyFont": "Helvetica Neue",
+              "headerBounds": "0,1848,1152,130",
+              "headerImage": "https://64.media.tumblr.com/21f3d4c9dcd3b9195437e1d6c07afe3e/799c3eba9d02cf0f-f6/s2048x1152/5af6086c2ae37d07e57ae7804c387fe0f4b99b6f.png",
+              "headerImageFocused": "https://64.media.tumblr.com/21f3d4c9dcd3b9195437e1d6c07afe3e/799c3eba9d02cf0f-f6/s2048x3072_c6348,0,90234,100000/d56e89871d06660f512fa0d87463d57faef19ac0.png",
+              "headerImagePoster": "",
+              "headerImageScaled": "https://64.media.tumblr.com/21f3d4c9dcd3b9195437e1d6c07afe3e/799c3eba9d02cf0f-f6/s2048x3072/2a82b2514be28ff1e035337e6b17f289b5541ed7.png",
+              "headerStretch": true,
+              "linkColor": "#cb8dfe",
+              "showAvatar": true,
+              "showDescription": true,
+              "showHeaderImage": true,
+              "showTitle": true,
+              "titleColor": "#ffffff",
+              "titleFont": "Calluna",
+              "titleFontWeight": "bold"
+            },
+            "title": "Commentcember",
+            "tumblrmartAccessories": {},
+            "url": "https://commentcember.tumblr.com/",
+            "uuid": "t:Hntgu0DphpFmr-OrFBfZEg",
+            "shareLikes": false,
+            "shareFollowing": false,
+            "allowSearchIndexing": true,
+            "ask": true,
+            "isBlockedFromPrimary": false,
+            "shouldBlur": false,
+            "isAdultLastReporter": null,
+            "active": true,
+            "showFollowAction": true
+          }
+        }
+      ],
+      "rebloggedFromId": "832566484726333440",
+      "rebloggedFromUrl": "https://peachdoxie.tumblr.com/post/832566484726333440",
+      "rebloggedFromName": "peachdoxie",
+      "rebloggedFromUuid": "t:-dEaliJrSP-YhdxEzlV6UA",
+      "rebloggedRootId": "832491928337743872",
+      "rebloggedRootUrl": "https://commentcember.tumblr.com/post/832491928337743872/commentcember-2026-prompts-are-here",
+      "rebloggedRootName": "commentcember",
+      "rebloggedRootUuid": "t:Hntgu0DphpFmr-OrFBfZEg",
+      "communityLabels": {
+        "hasCommunityLabel": false,
+        "lastReporter": "author",
+        "categories": [],
+        "hasCommunityLabelOverride": false,
+        "overriddenCategories": []
+      },
+      "isNsfw": false,
+      "classification": "clean",
+      "blog": {
+        "name": "caelanthe",
+        "title": "hi im Cael",
+        "url": "https://caelanthe.tumblr.com/",
+        "uuid": "t:Ip0MimF7yYxE7I5RvLeGsA",
+        "descriptionNpf": [
+          {
+            "type": "text",
+            "text": "Cael, 32, fine with she/they prounouns, Polish.  im very normal about haikyuu. currently obsessed with healymarch"
+          }
+        ]
+      }
+    }
+  ]
+}

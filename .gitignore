@@ -1,0 +1,28 @@
+# Dependencies / build output
+node_modules/
+dist/
+web-ext-artifacts/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Local/private captures or temp data (not sanitized fixtures)
+post-examples/
+example_files/
+*.local.*
+.env
+.env.*

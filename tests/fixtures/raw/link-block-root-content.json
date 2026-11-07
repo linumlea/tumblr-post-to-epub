@@ -1,0 +1,181 @@
+{
+  "fixtureVersion": 1,
+  "sourceCapture": "post23.json",
+  "sanitized": true,
+  "privacy": "Removed React Query/user/session/placement/ad/community membership data from raw capture.",
+  "routeName": "peepr-blog-permalink",
+  "posts": [
+    {
+      "objectType": "post",
+      "type": "blocks",
+      "originalType": "regular",
+      "isBlocksPostFormat": true,
+      "id": "743688943605776384",
+      "idString": "743688943605776384",
+      "blogName": "senoraconstelacionesdeinvierno",
+      "postUrl": "https://www.tumblr.com/senoraconstelacionesdeinvierno/743688943605776384/how-many-more-times-can-we-say-it-your-harry",
+      "canonicalUrl": "https://www.tumblr.com/senoraconstelacionesdeinvierno/743688943605776384/how-many-more-times-can-we-say-it-your-harry",
+      "slug": "how-many-more-times-can-we-say-it-your-harry",
+      "date": "2024-02-29 20:04:04 GMT",
+      "timestamp": 1709237044,
+      "state": "published",
+      "tags": [
+        "anti jkr",
+        "anti jk rowling",
+        "anti harry potter",
+        "pajiba",
+        "mis escritos",
+        "article"
+      ],
+      "tagsV2": [
+        {
+          "name": "anti jkr"
+        },
+        {
+          "name": "anti jk rowling"
+        },
+        {
+          "name": "anti harry potter"
+        },
+        {
+          "name": "pajiba"
+        },
+        {
+          "name": "mis escritos"
+        },
+        {
+          "name": "article"
+        }
+      ],
+      "summary": "How Many More Times Can We Say It? Your Harry Potter Addiction Is Funding Transphobia",
+      "content": [
+        {
+          "type": "text",
+          "text": "I haven't purchased a HP item in close to a decade - I use the books I already had as doorstops or to prop a laptop up for meetings nowadays."
+        },
+        {
+          "type": "text",
+          "text": "There is NO \"death of the author\" with JK Rowling - she controls and continues to profit from her IP, and uses that money to fund hate groups."
+        },
+        {
+          "type": "link",
+          "url": "https://web.archive.org/web/20250214122504/https://www.pajiba.com/politics/your-harry-potter-addiction-is-funding-transphobia.php",
+          "displayUrl": "https://web.archive.org/web/20250214122504/https://www.pajiba.com/politics/your-harry-potter-addiction-is-funding-transphobia.php",
+          "title": "How Many More Times Can We Say It? Your Harry Potter Addiction Is Funding Transphobia",
+          "description": "When one person can give £70,000 to a hate group's legal funds, maybe it's time to bin the Dobby plushies. ",
+          "siteName": "Pajiba",
+          "poster": [
+            {
+              "mediaKey": "bf029771d432849de4f17aa5000147bf:2aebf3e27216157e-a0",
+              "type": "image/jpeg",
+              "width": 700,
+              "height": 467,
+              "url": "https://64.media.tumblr.com/bf029771d432849de4f17aa5000147bf/2aebf3e27216157e-a0/s1280x1920/c3a1f026043ffe8d9fee24b1a464c126086f53ae.jpg"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Edit April 2, 2026: updated link because the original is deprecated (thank you person who figured that out)",
+          "formatting": [
+            {
+              "type": "link",
+              "start": 20,
+              "end": 67,
+              "url": "https://web.archive.org/web/20250214122504/https://www.pajiba.com/politics/your-harry-potter-addiction-is-funding-transphobia.php"
+            }
+          ]
+        }
+      ],
+      "layout": [],
+      "trail": [],
+      "communityLabels": {
+        "hasCommunityLabel": false,
+        "lastReporter": "author",
+        "categories": []
+      },
+      "isNsfw": false,
+      "classification": "clean",
+      "blog": {
+        "name": "senoraconstelacionesdeinvierno",
+        "title": "La Señora de las Constelaciones de Invierno",
+        "url": "https://www.tumblr.com/senoraconstelacionesdeinvierno",
+        "uuid": "t:fupg5fX061Rv3XLre_JytA",
+        "descriptionNpf": [
+          {
+            "type": "text",
+            "text": "Nerdy-ish, 30-ish, & So Very Tired (+ ADHD)\n🥵 WHAT TO DO IF YOU GET PEPPER SPRAYED!\n🌌 AO3 🧬 PUBLIC HEALTH 🌈 DEMOCRACY 🌊\nfuck off terfs, dv apologists, and anti-vaxxers",
+            "formatting": [
+              {
+                "type": "link",
+                "start": 21,
+                "end": 34,
+                "url": "https://www.tumblr.com/senoraconstelacionesdeinvierno/766420534414229504/kenneth-walden-on-instagram-we-have-to-accept"
+              },
+              {
+                "type": "bold",
+                "start": 21,
+                "end": 34
+              },
+              {
+                "type": "link",
+                "start": 38,
+                "end": 42,
+                "url": "https://www.tumblr.com/senoraconstelacionesdeinvierno/search/adhd"
+              },
+              {
+                "type": "bold",
+                "start": 38,
+                "end": 42
+              },
+              {
+                "type": "link",
+                "start": 44,
+                "end": 83,
+                "url": "https://www.tumblr.com/senoraconstelacionesdeinvierno/807139623320109056/important-public-health-note-about-pepper-spray"
+              },
+              {
+                "type": "bold",
+                "start": 45,
+                "end": 83
+              },
+              {
+                "type": "link",
+                "start": 129,
+                "end": 134,
+                "url": "https://www.tumblr.com/senoraconstelacionesdeinvierno/743688943605776384/"
+              },
+              {
+                "type": "bold",
+                "start": 129,
+                "end": 134
+              },
+              {
+                "type": "link",
+                "start": 136,
+                "end": 149,
+                "url": "https://www.pajiba.com/celebrities_are_better_than_you/johnny-depps-case-against-amber-heard-was-textbook-darvo.php"
+              },
+              {
+                "type": "bold",
+                "start": 136,
+                "end": 149
+              },
+              {
+                "type": "link",
+                "start": 155,
+                "end": 167,
+                "url": "https://www.tumblr.com/senoraconstelacionesdeinvierno/801930469325373440"
+              },
+              {
+                "type": "bold",
+                "start": 155,
+                "end": 167
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

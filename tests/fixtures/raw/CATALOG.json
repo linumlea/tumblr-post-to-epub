@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-11-07T16:30:50.281Z",
+  "fixtures": [
+    {
+      "source": "post.json",
+      "out": "text-formatting-long-reblog-trail.json",
+      "note": "Long formatted text, headings, many images/GIF-like media, mention formatting; content in trail.",
+      "postCount": 1,
+      "postIds": [
+        "163424009159"
+      ]
+    },
+    {
+      "source": "post3.json",
+      "out": "chat-root-content.json",
+      "note": "Root content with chat/heading blocks and formatting; empty trail.",
+      "postCount": 1,
+      "postIds": [
+        "151932705871"
+      ]
+    },
+    {
+      "source": "post6.json",
+      "out": "image-rows-gifv-colors.json",
+      "note": "Image blocks with rows layout, gifv URLs declared as webp, posters/colors, small/bold/italic formatting.",
+      "postCount": 1,
+      "postIds": [
+        "179704887448"
+      ]
+    },
+    {
+      "source": "post10.json",
+      "out": "ask-layout.json",
+      "note": "Ask/note-style layout referencing blocks; trail content with image.",
+      "postCount": 1,
+      "postIds": [
+        "178265983936"
+      ]
+    },
+    {
+      "source": "post14.json",
+      "out": "audio-rows.json",
+      "note": "Audio block with media/poster/embedHtml field and rows layout; text in trail.",
+      "postCount": 1,
+      "postIds": [
+        "176851896258"
+      ]
+    },
+    {
+      "source": "post17.json",
+      "out": "multi-trail-video-link.json",
+      "note": "Multiple trail entries, video with poster/filmstrip, inline link formatting.",
+      "postCount": 1,
+      "postIds": [
+        "832632261371363328"
+      ]
+    },
+    {
+      "source": "post21.json",
+      "out": "poll.json",
+      "note": "Poll block with answers/settings/timestamps plus text blocks.",
+      "postCount": 1,
+      "postIds": [
+        "817181616470376448"
+      ]
+    },
+    {
+      "source": "post22.json",
+      "out": "condensed-truncate-color-links.json",
+      "note": "Rows/condensed layouts with truncateAfter, overlapping color+bold inline ranges, and ordered-list items containing links; content in trail.",
+      "postCount": 1,
+      "postIds": [
+        "832567782432440320"
+      ]
+    },
+    {
+      "source": "post23.json",
+      "out": "link-block-root-content.json",
+      "note": "Root content link block with url/displayUrl/title/description/siteName/poster; plus inline link formatting; empty trail.",
+      "postCount": 1,
+      "postIds": [
+        "743688943605776384"
+      ]
+    },
+    {
+      "source": "post24.json",
+      "out": "inline-formatting-subtypes-private.json",
+      "note": "Private post, root content; strikethrough/bold/italic/small/link/color formatting and heading/quote/chat/quirky/indented/ordered+unordered list subtypes.",
+      "postCount": 1,
+      "postIds": [
+        "832641494194225152"
+      ]
+    },
+    {
+      "source": "hand-crafted",
+      "out": "unknown-future-block.json",
+      "note": "Undocumented block type to lock fallback behavior.",
+      "postCount": 1,
+      "postIds": [
+        "synthetic-unknown-1"
+      ]
+    }
+  ]
+}

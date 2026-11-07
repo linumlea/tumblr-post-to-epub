@@ -1,0 +1,42 @@
+{
+  "name": "tumblr-post-to-epub",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Firefox WebExtension that exports individual Tumblr posts as self-contained EPUB 3 files.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint:ext": "web-ext lint --source-dir dist",
+    "start:firefox": "web-ext run --source-dir dist --firefox=firefox",
+    "package:ext": "web-ext build --source-dir dist --overwrite-dest"
+  },
+  "devDependencies": {
+    "@types/firefox-webext-browser": "^120.0.4",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4",
+    "web-ext": "^8.6.0"
+  },
+  "dependencies": {},
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/USER/tumblr-post-to-epub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/USER/tumblr-post-to-epub/issues"
+  },
+  "homepage": "https://github.com/USER/tumblr-post-to-epub#readme",
+  "keywords": [
+    "firefox",
+    "webextension",
+    "tumblr",
+    "epub",
+    "epub3",
+    "archiving"
+  ]
+}

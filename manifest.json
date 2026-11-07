@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Tumblr Post to EPUB",
+  "version": "0.1.0",
+  "description": "Export individual Tumblr posts as self-contained EPUB files for private archiving.",
+  "action": {
+    "default_title": "Export Tumblr post as EPUB",
+    "default_popup": "src/popup/index.html"
+  },
+  "background": {
+    "scripts": ["background/index.js"],
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.tumblr.com/*"],
+      "js": ["content/index.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["activeTab", "downloads", "storage", "scripting"],
+  "host_permissions": ["*://*.tumblr.com/*", "*://*.media.tumblr.com/*", "*://*.tumblr.co/*"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tumblr-epub-private@example.local",
+      "strict_min_version": "128.0"
+    }
+  }
+}
