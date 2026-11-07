@@ -34,10 +34,9 @@ npm install
 npm run typecheck
 npm test
 npm run build
-node .\scripts\copy-extension-files.mjs
 ```
 
-`npm run build` produces JavaScript/HTML in `dist/`. `node .\scripts\copy-extension-files.mjs` copies `manifest.json` and icons into `dist/` so Firefox can load the extension from `dist/`.
+`npm run build` compiles the extension into `dist/` and copies `manifest.json` and icons there, so Firefox can load it from `dist/`.
 
 If `npm install` reports install scripts that need approval in your environment (for example `esbuild`), run:
 
