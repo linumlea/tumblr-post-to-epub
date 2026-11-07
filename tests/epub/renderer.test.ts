@@ -1,4 +1,4 @@
-﻿import { readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { parseSanitizedPost } from '../../src/tumblr/parser';
@@ -63,6 +63,23 @@ describe('XHTML renderer (Phase 4)', () => {
     const html = renderPostDocument(normalized('image-rows-gifv-colors.json')).xhtml;
     expect(html).toMatch(/<img src="assets\/[^"]+"/);
     expect(html).toContain('alt=');
+  });
+
+  it('renders image alt text visibly when present', () => {
+    const post = normalized('link-block-root-content.json');
+    const withImg = { ...post, content: [{ kind: 'image' as const, media: [{ url: 'https://m/a.jpg' }], altText: 'Visible alt text', caption: 'A caption' }, ...post.content] };
+    const html = renderPostBodyXhtml(withImg).body;
+    expect(html).toContain('class="image-alt"');
+    expect(html).toContain('Visible alt text');
+    expect(html).toContain('<figcaption>A caption</figcaption>');
+  });
+
+  it('does not duplicate alt text when it equals the caption', () => {
+    const post = normalized('link-block-root-content.json');
+    const withImg = { ...post, content: [{ kind: 'image' as const, media: [{ url: 'https://m/a.jpg' }], altText: 'Same text', caption: 'Same text' }, ...post.content] };
+    const html = renderPostBodyXhtml(withImg).body;
+    const matches = html.match(/class="image-alt"/g) || [];
+    expect(matches.length).toBe(0);
   });
 
   it('renders block-form links as clickable safe links', () => {

@@ -28,6 +28,7 @@ figure { margin: 1em 0; }
 figure.image, figure.gallery-item { text-align: center; }
 img { max-width: 100%; height: auto; }
 figcaption { font-size: 0.92em; margin-top: 0.35em; }
+.image-alt { font-size: 0.9em; margin-top: 0.3em; font-style: italic; opacity: 0.9; }
 a { text-decoration: underline; }
 .trail-entry { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid currentColor; }
 .trail-attribution { font-weight: bold; margin-bottom: 0.6rem; }

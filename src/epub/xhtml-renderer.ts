@@ -210,7 +210,11 @@ function mediaPlaceholderUrl(scope: string, blockIndex: number, candidateIndex: 
 function renderImageFigure(image: ImageBlock, src: string, captionExtra?: string): string {
   const alt = esc(image.altText ?? '');
   const caption = [image.caption, captionExtra].filter(Boolean).map((t) => esc(String(t))).join(' ');
-  return `<figure class="image"><img src="${esc(src)}" alt="${alt}"/>${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
+  // Preserve alt text visibly (in addition to the img alt attribute) when post data provides it.
+  // Avoid duplicating text that is already shown as the caption.
+  const captionText = [image.caption, captionExtra].filter(Boolean).map((t) => String(t).trim()).join(' ');
+  const altText = image.altText && image.altText.trim() && image.altText.trim() !== captionText ? `<p class="image-alt">${esc(image.altText)}</p>` : '';
+  return `<figure class="image"><img src="${esc(src)}" alt="${alt}"/>${caption ? `<figcaption>${caption}</figcaption>` : ''}${altText}</figure>`;
 }
 
 function renderImageBlock(block: ImageBlock, scope: string, blockIndex: number, resolve?: (url: string) => string | undefined): string {
