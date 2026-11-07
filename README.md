@@ -73,7 +73,6 @@ To pick up code changes: rebuild/copy, reload the temporary add-on in `about:deb
 - `*://*.tumblr.com/*`, `*://*.tumblr.co/*` — read the viewed Tumblr page and download Tumblr-hosted media for packaging.
 - `activeTab`, `scripting` — run extraction/export actions on the active tab when requested.
 - `downloads` — save the generated EPUB.
-- `storage` — reserved for small local settings (not used for post content/credentials).
 
 ## Development
 

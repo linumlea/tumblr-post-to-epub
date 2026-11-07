@@ -175,7 +175,8 @@ export function parseTrailEntry(raw: SanitizedTrailEntry, index: number, ctx: Pa
   const base = `trail[${index}]`;
   const blog = raw.blog && typeof raw.blog === 'object' ? (raw.blog as Record<string, unknown>) : undefined;
   const post = raw.post && typeof raw.post === 'object' ? (raw.post as Record<string, unknown>) : undefined;
-  return {
+  const unknownStart = ctx.unknowns.length;
+  const entry: NormalizedTrailEntry = {
     blogName: str(blog?.name),
     blogTitle: str(blog?.title),
     blogUrl: str(blog?.url),
@@ -187,6 +188,8 @@ export function parseTrailEntry(raw: SanitizedTrailEntry, index: number, ctx: Pa
     layout: parseLayouts(raw.layout, `${base}.layout`, ctx.unknowns),
     unknowns: [],
   };
+  entry.unknowns = ctx.unknowns.slice(unknownStart);
+  return entry;
 }
 
 export function parseSanitizedPost(post: SanitizedPost): { post: NormalizedPost; diagnostics: string[] } {

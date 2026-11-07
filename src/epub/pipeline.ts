@@ -68,14 +68,20 @@ export async function runExportPipeline(post: NormalizedPost, mediaPlan: MediaPl
   diagnostics.push(...rendered.diagnostics);
   if (warnings.length) diagnostics.push(`Media warnings: ${warnings.length}`);
 
-  const epub = packageEpub({
-    title: rendered.title,
-    filenameBase: rendered.filenameBase,
-    xhtml: rendered.xhtml,
-    assets: registry.assets,
-    sourceUrl: post.canonicalUrl || post.url,
-    identifier: post.id ? `tumblr-post-${post.blogName || 'unknown'}-${post.id}` : undefined,
-  });
+  let epub: Uint8Array;
+  try {
+    epub = packageEpub({
+      title: rendered.title,
+      filenameBase: rendered.filenameBase,
+      xhtml: rendered.xhtml,
+      assets: registry.assets,
+      sourceUrl: post.canonicalUrl || post.url,
+      identifier: post.id ? `tumblr-post-${post.blogName || 'unknown'}-${post.id}` : undefined,
+    });
+  } catch (error) {
+    const msg = error instanceof Error ? error.message : String(error);
+    return { ok: false, warnings, diagnostics: [...diagnostics, `EPUB packaging failed: ${msg}`], error: msg, errorCode: 'EPUB_GENERATION_FAILED' };
+  }
 
   return {
     ok: true,

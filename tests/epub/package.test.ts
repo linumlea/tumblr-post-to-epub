@@ -6,8 +6,6 @@ import type { NormalizedPost } from '../../src/tumblr/types';
 import type { MediaPlanItem } from '../../src/media/index';
 
 function zipEntryNames(zip: Uint8Array): string[] {
-  const text = Array.from(zip).map((b) => String.fromCharCode(b)).join('');
-  // central directory file names appear after PK\x01\x02 headers; simple scan
   const names: string[] = [];
   let i = 0;
   while (i + 30 <= zip.length) {

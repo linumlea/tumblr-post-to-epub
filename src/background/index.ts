@@ -49,10 +49,10 @@ async function downloadEpub(filename: string, bytes: Uint8Array): Promise<void> 
     // Best-effort wait for terminal state; ignore if API shape differs.
     if (typeof id === 'number' && browser.downloads?.onChanged) {
       await new Promise<void>((resolve) => {
-        const timeout = setTimeout(() => { try { browser.downloads.onChanged.removeListener(listener); } catch {} resolve(); }, 30000);
+        const timeout = setTimeout(() => { try { browser.downloads.onChanged.removeListener(listener); } catch {} resolve(); }, 120000);
         function listener(delta: browser.downloads._OnChangedDownloadDelta) {
           if (delta.id !== id) return;
-          if (delta.state?.current === 'complete' || delta.error) {
+          if (delta.state?.current === 'complete' || delta.state?.current === 'canceled' || delta.state?.current === 'interrupted' || delta.error) {
             clearTimeout(timeout);
             try { browser.downloads.onChanged.removeListener(listener); } catch {}
             resolve();

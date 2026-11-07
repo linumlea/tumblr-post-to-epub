@@ -1,14 +1,12 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { sanitizePost } from '../../src/tumblr/extract';
 import { bestMedia } from '../../src/tumblr/media-parser';
 import { parseLayouts } from '../../src/tumblr/layout-parser';
 import {
   parseAudioBlock,
   parseContentBlock,
   parseImageBlock,
-  parseLinkBlock,
   parsePaywallBlock,
   parsePollBlock,
   parseSanitizedPost,
