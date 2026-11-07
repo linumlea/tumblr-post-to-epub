@@ -1,4 +1,4 @@
-ï»¿import { MessageType, type ExtensionMessage, type ExportResultPayload } from '../shared/messages';
+import { MessageType, type ExtensionMessage, type ExportResultPayload } from '../shared/messages';
 import { runExportPipeline } from '../epub/pipeline';
 
 async function getActiveTab(): Promise<browser.tabs.Tab | undefined> {
@@ -12,17 +12,14 @@ function errorText(error: unknown): string {
 
 async function sendToActiveTab(message: ExtensionMessage): Promise<ExtensionMessage> {
   const tab = await getActiveTab();
-  console.debug('[tumblr-epub/bg] sendToActiveTab', { message: message.type, tabId: tab?.id, url: tab?.url });
   if (!tab?.id) {
     return { type: MessageType.EXTRACTION_RESULT, payload: { ok: false, viewedUrl: '', diagnostics: ['No active tab.'], error: 'No active tab.' } } satisfies ExtensionMessage;
   }
   try {
     const response = (await browser.tabs.sendMessage(tab.id, message)) as ExtensionMessage;
-    console.debug('[tumblr-epub/bg] response', { message: message.type, responseType: response?.type });
     return response;
   } catch (error) {
     const detail = errorText(error);
-    console.error('[tumblr-epub/bg] tabs.sendMessage failed', { message: message.type, tabId: tab.id, url: tab.url, detail });
     return {
       type: MessageType.EXTRACTION_RESULT,
       payload: {
@@ -76,7 +73,7 @@ async function progress(phase: 'extracting' | 'downloading' | 'generating' | 'sa
 async function handleExport(): Promise<ExportResultPayload> {
   const tab = await getActiveTab();
   if (!tab?.id) return { ok: false, message: 'No active tab.', errorCode: 'UNSUPPORTED_CONTEXT' };
-  await progress('extracting', 'Extracting and parsing the viewed postâ€¦');
+  await progress('extracting', 'Extracting and parsing the viewed post…');
   let prepared: ExtensionMessage;
   try {
     prepared = await browser.tabs.sendMessage(tab.id, { type: MessageType.PREPARE_EXPORT } satisfies ExtensionMessage) as ExtensionMessage;
@@ -89,13 +86,13 @@ async function handleExport(): Promise<ExportResultPayload> {
   }
 
   const planCount = prepared.payload.mediaPlan?.length ?? 0;
-  await progress('downloading', `Downloading ${planCount} media item(s)â€¦`);
+  await progress('downloading', `Downloading ${planCount} media item(s)…`);
   const result = await runExportPipeline(prepared.payload.post, prepared.payload.mediaPlan ?? [], fetch.bind(globalThis));
   if (!result.ok || !result.bytes || !result.filename) {
     return { ok: false, message: result.error || 'Export failed.', warnings: [...prepared.payload.diagnostics, ...result.diagnostics, ...result.warnings], errorCode: result.errorCode || 'EPUB_GENERATION_FAILED' };
   }
 
-  await progress('saving', `Saving ${result.filename}â€¦`);
+  await progress('saving', `Saving ${result.filename}…`);
   try {
     await downloadEpub(result.filename, result.bytes);
   } catch (error) {
@@ -117,7 +114,6 @@ async function handleExport(): Promise<ExportResultPayload> {
 }
 
 browser.runtime.onMessage.addListener(async (message: ExtensionMessage) => {
-  console.debug('[tumblr-epub/bg] runtime message', message.type);
   if (message.type === MessageType.GET_POST_STATUS) {
     const tab = await getActiveTab();
     if (!tab?.id) return { type: MessageType.POST_STATUS, payload: { status: 'error', message: 'No active tab.' } } satisfies ExtensionMessage;

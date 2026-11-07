@@ -4,13 +4,9 @@ import { describe, expect, it } from 'vitest';
 import { deriveMatchInput, matchViewedPost } from '../../src/tumblr/post-match';
 import type { RawPostObject } from '../../src/tumblr/types';
 
-function readRaw(name: string): any {
-  return JSON.parse(readFileSync(path.resolve(__dirname, '../../../post-examples', name), 'utf8'));
-}
-
-function postsFromCapture(name: string): RawPostObject[] {
-  const raw = readRaw(name);
-  return (raw?.PeeprRoute?.initialTimeline?.objects ?? []).filter((o: any) => o?.objectType === 'post');
+function fixturePosts(name: string): RawPostObject[] {
+  const fixture = JSON.parse(readFileSync(path.resolve(__dirname, '../fixtures/raw', name), 'utf8'));
+  return (fixture.posts ?? []).filter((o: any) => o?.objectType === 'post') as RawPostObject[];
 }
 
 describe('post matching', () => {
@@ -22,7 +18,7 @@ describe('post matching', () => {
   });
 
   it('matches a post by id when canonical URL differs from viewed reblog URL', () => {
-    const posts = postsFromCapture('post22.json');
+    const posts = fixturePosts('condensed-truncate-color-links.json');
     const input = deriveMatchInput('https://www.tumblr.com/caelanthe/832567782432440320');
     const result = matchViewedPost(posts, input);
     expect('error' in result).toBe(false);
@@ -32,7 +28,7 @@ describe('post matching', () => {
   });
 
   it('selects a single candidate without ambiguity', () => {
-    const posts = postsFromCapture('post23.json');
+    const posts = fixturePosts('link-block-root-content.json');
     const result = matchViewedPost(posts, { viewedUrl: 'https://www.tumblr.com/somewhere/743688943605776384', postIdHint: '743688943605776384' });
     expect('error' in result).toBe(false);
   });

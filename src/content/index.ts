@@ -87,15 +87,12 @@ function prepareExport(): ExportPreparedPayload {
 }
 
 browser.runtime.onMessage.addListener((message: ExtensionMessage) => {
-  console.debug('[tumblr-epub/content] message', message.type, location.href);
   if (message.type === MessageType.GET_POST_STATUS) {
     const payload = detectTumblrPost();
-    console.debug('[tumblr-epub/content] status', payload);
     return Promise.resolve({ type: MessageType.POST_STATUS, payload } satisfies ExtensionMessage);
   }
   if (message.type === MessageType.DEBUG_EXTRACT_POST) {
     const payload = extractCurrentPost();
-    console.debug('[tumblr-epub/content] debug extraction result', payload);
     return Promise.resolve({ type: MessageType.EXTRACTION_RESULT, payload } satisfies ExtensionMessage);
   }
   if (message.type === MessageType.DEBUG_LAST_EXTRACTION) {
@@ -103,7 +100,6 @@ browser.runtime.onMessage.addListener((message: ExtensionMessage) => {
   }
   if (message.type === MessageType.PREPARE_EXPORT) {
     const payload = prepareExport();
-    console.debug('[tumblr-epub/content] export prepared', { ok: payload.ok, media: payload.mediaPlan?.length, diagnostics: payload.diagnostics?.length });
     return Promise.resolve({ type: MessageType.EXPORT_PREPARED, payload } satisfies ExtensionMessage);
   }
   if (message.type === MessageType.EXPORT_CURRENT_POST) {
@@ -117,4 +113,3 @@ browser.runtime.onMessage.addListener((message: ExtensionMessage) => {
   return undefined;
 });
 
-console.debug('[tumblr-epub] content script loaded', { href: location.href, host: location.hostname, readyState: document.readyState, scripts: document.scripts.length });

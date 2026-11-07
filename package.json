@@ -25,12 +25,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/USER/tumblr-post-to-epub.git"
+    "url": "git+https://github.com/linumlea/tumblr-post-to-epub.git"
   },
   "bugs": {
-    "url": "https://github.com/USER/tumblr-post-to-epub/issues"
+    "url": "https://github.com/linumlea/tumblr-post-to-epub/issues"
   },
-  "homepage": "https://github.com/USER/tumblr-post-to-epub#readme",
+  "homepage": "https://github.com/linumlea/tumblr-post-to-epub#readme",
   "keywords": [
     "firefox",
     "webextension",

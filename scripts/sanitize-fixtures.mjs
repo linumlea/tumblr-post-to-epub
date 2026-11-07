@@ -3,9 +3,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const root = path.resolve(__dirname, '..', '..');
+const root = path.resolve(__dirname, '..');
 const rawDir = path.join(root, 'post-examples');
-const outDir = path.join(root, 'tumblr-epub-extension', 'tests', 'fixtures', 'raw');
+const outDir = path.join(root, 'tests', 'fixtures', 'raw');
 
 const selections = [
   { source: 'post.json', out: 'text-formatting-long-reblog-trail.json', note: 'Long formatted text, headings, many images/GIF-like media, mention formatting; content in trail.' },

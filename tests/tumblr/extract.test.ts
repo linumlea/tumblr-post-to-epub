@@ -4,19 +4,20 @@ import { describe, expect, it } from 'vitest';
 import { collectPostObjects, detectBodyLocation, extractViewedPostFromPage, sanitizePost } from '../../src/tumblr/extract';
 import { deriveMatchInput } from '../../src/tumblr/post-match';
 
-function readRaw(name: string): any {
-  return JSON.parse(readFileSync(path.resolve(__dirname, '../../../post-examples', name), 'utf8'));
+function fixtureEnvelope(name: string): any {
+  const fixture = JSON.parse(readFileSync(path.resolve(__dirname, '../fixtures/raw', name), 'utf8'));
+  return { PeeprRoute: { initialTimeline: { objects: fixture.posts ?? [] } } };
 }
 
 describe('extraction/sanitization', () => {
   it('collects post objects from Peepr hydration envelopes', () => {
-    const groups = collectPostObjects(readRaw('post22.json'));
+    const groups = collectPostObjects(fixtureEnvelope('text-formatting-long-reblog-trail.json'));
     expect(groups.flatMap((g) => g.posts).length).toBeGreaterThanOrEqual(1);
     expect(groups[0].path).toContain('initialTimeline.objects');
   });
 
   it('extracts a trail-only post body and preserves trail order metadata', () => {
-    const result = extractViewedPostFromPage(readRaw('post.json'), deriveMatchInput('https://www.tumblr.com/someblog/163424009159'));
+    const result = extractViewedPostFromPage(fixtureEnvelope('text-formatting-long-reblog-trail.json'), deriveMatchInput('https://www.tumblr.com/lilllieeh/163424009159/mischaracterization-of-characters-in-haikyuu'));
     expect(result.ok).toBe(true);
     expect(result.bodyLocation).toBe('trail');
     expect(result.post?.content).toEqual([]);
@@ -24,7 +25,7 @@ describe('extraction/sanitization', () => {
   });
 
   it('extracts a root-content post with empty trail', () => {
-    const result = extractViewedPostFromPage(readRaw('post23.json'), deriveMatchInput('https://www.tumblr.com/senoraconstelacionesdeinvierno/743688943605776384'));
+    const result = extractViewedPostFromPage(fixtureEnvelope('link-block-root-content.json'), deriveMatchInput('https://www.tumblr.com/senoraconstelacionesdeinvierno/743688943605776384/how-many-more-times-can-we-say-it-your-harry'));
     expect(result.ok).toBe(true);
     expect(result.bodyLocation).toBe('root');
     expect(result.post?.trail).toEqual([]);
@@ -32,7 +33,7 @@ describe('extraction/sanitization', () => {
   });
 
   it('sanitizes sensitive top-level/session data', () => {
-    const raw = readRaw('post22.json');
+    const raw = fixtureEnvelope('condensed-truncate-color-links.json');
     raw.PeeprRoute.initialTimeline.objects[0].queries = [{ secret: true }];
     const result = extractViewedPostFromPage(raw, deriveMatchInput('https://www.tumblr.com/caelanthe/832567782432440320'));
     expect(result.ok).toBe(true);

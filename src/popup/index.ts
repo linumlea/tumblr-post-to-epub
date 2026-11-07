@@ -14,9 +14,7 @@ function setStatus(text: string, detail = '', enabled = false): void {
 
 async function refresh(): Promise<void> {
   try {
-    console.debug('[tumblr-epub/popup] requesting status');
     const response = (await browser.runtime.sendMessage({ type: MessageType.GET_POST_STATUS } satisfies ExtensionMessage)) as ExtensionMessage | undefined;
-    console.debug('[tumblr-epub/popup] status response', response);
     if (!response || response.type !== MessageType.POST_STATUS) {
       setStatus('Unknown status', 'No response from extension.');
       return;
@@ -28,7 +26,6 @@ async function refresh(): Promise<void> {
     // Allow debug on Tumblr pages even when status is unsupported/searching so failures are visible.
     setStatus(message, details, status === 'ready' || status === 'searching' || status === 'unsupported');
   } catch (error) {
-    console.error('[tumblr-epub/popup] status failed', error);
     setStatus('Error checking page', error instanceof Error ? error.message : String(error));
   }
 }
@@ -49,7 +46,6 @@ debugBtn.addEventListener('click', async () => {
       return;
     }
     const p = response.payload;
-    console.debug('[tumblr-epub] extraction payload', p);
     const summary = [
       p.ok ? `Source: ${p.source ?? 'unknown'}` : `Error: ${p.error ?? 'unknown'}`,
       p.postId ? `Post: ${p.postId}` : '',
@@ -81,7 +77,6 @@ exportBtn.addEventListener('click', async () => {
         if (p.warnings.length > 8) lines.push(`(+${p.warnings.length - 8} more)`);
       }
       setStatus(p.ok ? 'Export complete' : 'Export failed', lines.join('\n'), true);
-      console.debug('[tumblr-epub/popup] export result', p);
     } else {
       setStatus('Export failed', 'Unexpected response from background.', true);
     }
