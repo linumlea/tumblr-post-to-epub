@@ -453,13 +453,19 @@ function renderTrailAttribution(trail: NormalizedTrailEntry): string {
   return `<div class="trail-attribution">${nameHtml}${meta.length ? ` <span class="post-meta">(${meta.join(' · ')})</span>` : ''}</div>`;
 }
 
+function renderSourceMeta(sourceUrl?: string | null, sourceTitle?: string, asParagraph = false): string {
+  const href = safeUrl(sourceUrl ?? undefined);
+  const title = sourceTitle?.trim();
+  if (!href && !title) return '';
+  const label = esc(title || 'Original source');
+  const link = href ? `<a href="${esc(href)}">${label}</a>` : label;
+  return asParagraph
+    ? `<p class="post-meta">Original source: ${link}</p>`
+    : `<div class="post-meta">Original source: ${link}</div>`;
+}
+
 function renderTrailSourceMeta(trail: NormalizedTrailEntry): string {
-  const sourceUrl = safeUrl(trail.sourceUrl);
-  const sourceTitle = trail.sourceTitle?.trim();
-  if (!sourceUrl && !sourceTitle) return '';
-  const label = esc(sourceTitle || 'Original source');
-  const link = sourceUrl ? `<a href="${esc(sourceUrl)}">${label}</a>` : label;
-  return `<div class="post-meta">Original source: ${link}</div>`;
+  return renderSourceMeta(trail.sourceUrl, trail.sourceTitle);
 }
 
 function renderTrail(trail: NormalizedTrailEntry[], diagnostics: string[], scopePrefix: string, resolve?: (url: string) => string | undefined, embedMedia = false): string {
@@ -493,9 +499,7 @@ export function renderPostBodyXhtml(post: NormalizedPost, options: RenderOptions
   else if (url) headerMeta += `<p class="post-meta"><a href="${esc(url)}">Source</a></p>`;
   const originUrl = safeUrl(post.sourceUrl);
   if (originUrl || post.sourceTitle) {
-    const originLabel = esc(post.sourceTitle || 'Original source');
-    const originHtml = originUrl ? `<a href="${esc(originUrl)}">${originLabel}</a>` : originLabel;
-    headerMeta += `<p class="post-meta">Original source: ${originHtml}</p>`;
+    headerMeta += renderSourceMeta(post.sourceUrl, post.sourceTitle, true);
   }
 
   const hasRoot = post.content.length > 0;

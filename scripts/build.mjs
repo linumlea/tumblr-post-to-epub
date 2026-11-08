@@ -8,6 +8,9 @@ const root = resolve(__dirname, '..');
 const common = {
   sourcemap: true,
   target: 'es2022',
+  minify: 'esbuild',
+  treeshake: true,
+  reportCompressedSize: false,
 };
 
 const configs = [
