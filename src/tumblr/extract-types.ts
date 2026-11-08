@@ -35,6 +35,8 @@ export interface SanitizedTrailEntry {
   content?: JsonObject[];
   layout?: JsonObject[];
   brokenBlogName?: string;
+  sourceUrl?: string;
+  sourceTitle?: string;
 }
 
 export interface SanitizedPost {

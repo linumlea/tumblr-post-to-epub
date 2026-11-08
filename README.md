@@ -49,6 +49,7 @@ The build output is created in `dist/` and includes the manifest and icons requi
 ## Usage notes
 
 - The popup shows whether the active tab appears to contain a single Tumblr post.
+- **Embed audio/video in EPUB** is optional. When enabled, direct media files are embedded in the EPUB when possible; otherwise the export keeps the safer metadata/link fallback.
 - **Export as EPUB** downloads a `.epub` file. Review warnings in the popup if some media could not be packaged.
 - Content scripts run on live `*.tumblr.com` pages; saved `file://` pages and view-source pages are not supported.
 

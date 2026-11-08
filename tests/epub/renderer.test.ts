@@ -101,6 +101,22 @@ describe('XHTML renderer', () => {
     expect(videoHtml).not.toContain('<iframe');
   });
 
+  it('embeds audio/video files when the user enables the option', () => {
+    const audioHtml = renderPostDocument(normalized('audio-rows.json'), {
+      resolveMediaUrl: () => '../assets/track.mp3',
+      embedMedia: true,
+    }).xhtml;
+    expect(audioHtml).toContain('<audio controls="controls"');
+    expect(audioHtml).toContain('src="../assets/track.mp3"');
+
+    const videoHtml = renderPostDocument(normalized('multi-trail-video-link.json'), {
+      resolveMediaUrl: () => '../assets/video.mp4',
+      embedMedia: true,
+    }).xhtml;
+    expect(videoHtml).toContain('<video controls="controls"');
+    expect(videoHtml).toContain('src="../assets/video.mp4"');
+  });
+
   it('renders poll as read-only content', () => {
     const html = renderPostDocument(normalized('poll.json')).xhtml;
     expect(html).toContain('class="poll-block"');
@@ -185,5 +201,59 @@ describe('XHTML renderer', () => {
     expect(html).toContain('Original source:');
     expect(html).toContain('href="https://example.com/source"');
     expect(html).toContain('Example Source');
+    expect(html.indexOf('Original source:')).toBeGreaterThan(-1);
+  });
+
+  it('renders trail-level source metadata inside the matching reblog section', () => {
+    const post: NormalizedPost = {
+      id: 'reblog-source-test',
+      blogName: 'root-blog',
+      tags: [],
+      content: [],
+      layout: [],
+      trail: [
+        {
+          blogName: 'first-blog',
+          content: [{ kind: 'text', text: 'First reblog text', formatting: [] }],
+          layout: [],
+          sourceUrl: 'https://example.com/first-source',
+          sourceTitle: 'First Source',
+          unknowns: [],
+        },
+        {
+          blogName: 'second-blog',
+          content: [{ kind: 'text', text: 'Second reblog text', formatting: [] }],
+          layout: [],
+          unknowns: [],
+        },
+      ],
+      unknowns: [],
+    };
+    const html = renderPostBodyXhtml(post).body;
+    expect(html).toContain('Original source:');
+    expect(html).toContain('href="https://example.com/first-source"');
+    expect(html).toContain('First Source');
+    expect(html.indexOf('First Source')).toBeLessThan(html.indexOf('Second reblog text'));
+  });
+
+  it('renders root source metadata in the original-post section when the root has no content blocks', () => {
+    const post: NormalizedPost = {
+      id: 'root-source-no-content',
+      blogName: 'root-blog',
+      sourceUrl: 'https://www.tiktok.com/t/ZThfmyW8w/',
+      sourceTitle: 'tiktok.com',
+      tags: [],
+      content: [],
+      layout: [],
+      trail: [
+        { blogName: 'reblogger', content: [{ kind: 'text', text: 'Reblog text', formatting: [] }], layout: [], unknowns: [] },
+      ],
+      unknowns: [],
+    };
+    const html = renderPostBodyXhtml(post).body;
+    expect(html).toContain('Original source:');
+    expect(html).toContain('href="https://www.tiktok.com/t/ZThfmyW8w/"');
+    expect(html).toContain('tiktok.com');
+    expect(html.indexOf('Original source:')).toBeGreaterThan(html.indexOf('Reblog text'));
   });
 });

@@ -37,7 +37,7 @@ export async function fetchMediaBytes(item: MediaPlanItem, fetchFn: typeof fetch
   }
 }
 
-export async function runExportPipeline(post: NormalizedPost, mediaPlan: MediaPlanItem[], fetchFn: typeof fetch = fetch): Promise<ExportPipelineResult> {
+export async function runExportPipeline(post: NormalizedPost, mediaPlan: MediaPlanItem[], fetchFn: typeof fetch = fetch, options: { embedMedia?: boolean } = {}): Promise<ExportPipelineResult> {
   const warnings: string[] = [];
   const diagnostics: string[] = [];
   const downloaded: Array<{ url: string; mediaType: string; bytes: Uint8Array }> = [];
@@ -64,6 +64,7 @@ export async function runExportPipeline(post: NormalizedPost, mediaPlan: MediaPl
       return p ? `../${p.replace(/^\/+/, '')}` : undefined;
     },
     cssHref: '../styles/style.css',
+    embedMedia: !!options.embedMedia,
   });
   diagnostics.push(...rendered.diagnostics);
   if (warnings.length) diagnostics.push(`Media warnings: ${warnings.length}`);

@@ -89,10 +89,14 @@ export interface ExportPreparedPayload {
   errorCode?: string;
 }
 
+export interface ExportCurrentPostPayload {
+  embedMedia?: boolean;
+}
+
 export type ExtensionMessage =
   | { type: typeof MessageType.GET_POST_STATUS }
   | { type: typeof MessageType.POST_STATUS; payload: PostStatusPayload }
-  | { type: typeof MessageType.EXPORT_CURRENT_POST }
+  | { type: typeof MessageType.EXPORT_CURRENT_POST; payload?: ExportCurrentPostPayload }
   | { type: typeof MessageType.EXPORT_PROGRESS; payload: ExportProgressPayload }
   | { type: typeof MessageType.EXPORT_RESULT; payload: ExportResultPayload }
   | { type: typeof MessageType.DEBUG_EXTRACT_POST }

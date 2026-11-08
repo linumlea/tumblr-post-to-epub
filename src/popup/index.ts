@@ -4,6 +4,24 @@ const statusEl = document.getElementById('status') as HTMLParagraphElement;
 const detailEl = document.getElementById('detail') as HTMLParagraphElement;
 const debugBtn = document.getElementById('debug') as HTMLButtonElement;
 const exportBtn = document.getElementById('export') as HTMLButtonElement;
+const embedMediaInput = document.getElementById('embed-media') as HTMLInputElement;
+
+async function loadSettings(): Promise<void> {
+  try {
+    const result = await browser.storage.local.get('embedMedia');
+    embedMediaInput.checked = !!result.embedMedia;
+  } catch {
+    embedMediaInput.checked = false;
+  }
+}
+
+async function saveSettings(): Promise<void> {
+  try {
+    await browser.storage.local.set({ embedMedia: embedMediaInput.checked });
+  } catch {
+    // Ignore storage errors in unsupported contexts; the export can still proceed with default behavior.
+  }
+}
 
 function setStatus(text: string, detail = '', enabled = false): void {
   statusEl.textContent = text;
@@ -66,24 +84,33 @@ debugBtn.addEventListener('click', async () => {
 exportBtn.addEventListener('click', async () => {
   setStatus('Exporting…', 'Extracting, downloading media, and packaging EPUB.', false);
   try {
-    const response = (await browser.runtime.sendMessage({ type: MessageType.EXPORT_CURRENT_POST } satisfies ExtensionMessage)) as ExtensionMessage | undefined;
-    if (response?.type === MessageType.EXPORT_RESULT) {
-      const p = response.payload;
-      const lines = [p.message];
-      if (p.filename) lines.push(`File: ${p.filename}`);
-      if (p.errorCode) lines.push(`Code: ${p.errorCode}`);
-      if (p.warnings?.length) {
-        lines.push('', `Warnings (${p.warnings.length}):`);
-        lines.push(...p.warnings.slice(0, 8));
-        if (p.warnings.length > 8) lines.push(`(+${p.warnings.length - 8} more)`);
-      }
-      setStatus(p.ok ? 'Export complete' : 'Export failed', lines.join('\n'), true);
-    } else {
-      setStatus('Export failed', 'Unexpected response from background.', true);
+  await saveSettings();
+  const response = (await browser.runtime.sendMessage({
+    type: MessageType.EXPORT_CURRENT_POST,
+    payload: { embedMedia: embedMediaInput.checked },
+  } satisfies ExtensionMessage)) as ExtensionMessage | undefined;
+  if (response?.type === MessageType.EXPORT_RESULT) {
+    const p = response.payload;
+    const lines = [p.message];
+    if (p.filename) lines.push(`File: ${p.filename}`);
+    if (p.errorCode) lines.push(`Code: ${p.errorCode}`);
+    if (p.warnings?.length) {
+      lines.push('', `Warnings (${p.warnings.length}):`);
+      lines.push(...p.warnings.slice(0, 8));
+      if (p.warnings.length > 8) lines.push(`(+${p.warnings.length - 8} more)`);
     }
-  } catch (error) {
-    setStatus('Export failed', error instanceof Error ? error.message : String(error), true);
+    setStatus(p.ok ? 'Export complete' : 'Export failed', lines.join('\n'), true);
+  } else {
+    setStatus('Export failed', 'Unexpected response from background.', true);
   }
+} catch (error) {
+  setStatus('Export failed', error instanceof Error ? error.message : String(error), true);
+}
 });
 
+embedMediaInput.addEventListener('change', () => {
+void saveSettings();
+});
+
+void loadSettings();
 void refresh();

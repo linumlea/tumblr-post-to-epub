@@ -149,6 +149,26 @@ describe('layout/trail/post parsing', () => {
     expect(parsed.post.trail[2].content.some((b) => b.kind === 'text' && 'text' in b && b.formatting.some((f) => f.type === 'link'))).toBe(true);
   });
 
+  it('preserves trail-level source metadata on the matching reblog entry', () => {
+    const parsed = parseSanitizedPost({
+      id: 'trail-source-test',
+      blogName: 'root-blog',
+      tags: [],
+      content: [],
+      trail: [
+        {
+          blog: { name: 'first-blog', url: 'https://first.example', title: 'First blog' },
+          post: { id: '1', timestamp: 1 },
+          content: [{ type: 'text', text: 'Alpha' }],
+          sourceUrl: 'https://example.com/first-source',
+          sourceTitle: 'First Source',
+        },
+      ],
+    } as any);
+    expect(parsed.post.trail[0].sourceUrl).toBe('https://example.com/first-source');
+    expect(parsed.post.trail[0].sourceTitle).toBe('First Source');
+  });
+
   it('parses root-content posts, tags, and rich text/list subtypes', () => {
     const parsed = parseSanitizedPost(fixture('inline-formatting-subtypes-private.json'));
     expect(parsed.post.trail).toEqual([]);

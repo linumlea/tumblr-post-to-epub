@@ -47,6 +47,21 @@ button:disabled {
   cursor: not-allowed;
 }
 
+.setting {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  color: #1f2937;
+  font-size: 12px;
+}
+
+.setting input {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+}
+
 .actions {
   display: grid;
   gap: 8px;

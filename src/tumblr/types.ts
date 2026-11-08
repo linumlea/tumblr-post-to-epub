@@ -74,6 +74,8 @@ export interface RawTrailEntry extends JsonObject {
   content?: RawBlock[];
   layout?: RawLayoutBlock[];
   brokenBlogName?: string;
+  sourceUrl?: string;
+  sourceTitle?: string;
 }
 
 export interface RawBlock extends JsonObject {
@@ -149,6 +151,8 @@ export interface NormalizedTrailEntry {
   postId?: string;
   timestamp?: number;
   brokenBlogName?: string;
+  sourceUrl?: string;
+  sourceTitle?: string;
   content: NormalizedBlock[];
   layout: NormalizedLayout[];
   unknowns: UnknownObservation[];

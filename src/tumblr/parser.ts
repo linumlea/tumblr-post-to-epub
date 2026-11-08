@@ -184,6 +184,8 @@ export function parseTrailEntry(raw: SanitizedTrailEntry, index: number, ctx: Pa
     postId: raw.post?.id != null ? String((post?.id as any) ?? raw.post.id) : undefined,
     timestamp: num(post?.timestamp),
     brokenBlogName: str(raw.brokenBlogName),
+    sourceUrl: str(raw.sourceUrl) ?? str((raw as any).source_url),
+    sourceTitle: str(raw.sourceTitle) ?? str((raw as any).source_title),
     content: parseContentBlocks(raw.content, `${base}.content`, ctx.unknowns),
     layout: parseLayouts(raw.layout, `${base}.layout`, ctx.unknowns),
     unknowns: [],

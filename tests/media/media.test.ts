@@ -36,17 +36,21 @@ describe('media planning', () => {
     tags: [],
     content: [
       { kind: 'image', media: [{ url: 'https://64.media.tumblr.com/a.gif', declaredType: 'image/webp' }, { url: 'https://64.media.tumblr.com/a-small.gif', declaredType: 'image/webp', width: 100 }], altText: 'a' },
-      { kind: 'video', provider: 'tumblr', url: 'https://v.tumblr.com/x.mp4', poster: [{ url: 'https://64.media.tumblr.com/poster.jpg' }], embedHtmlIgnored: true },
+      { kind: 'audio', provider: 'tumblr', url: 'https://a.tumblr.com/x.mp3', media: { url: 'https://a.tumblr.com/x.mp3', declaredType: 'audio/mpeg' }, poster: [{ url: 'https://64.media.tumblr.com/poster.jpg' }], embedHtmlIgnored: true },
+      { kind: 'video', provider: 'tumblr', url: 'https://v.tumblr.com/x.mp4', media: { url: 'https://v.tumblr.com/x.mp4', declaredType: 'video/mp4' }, poster: [{ url: 'https://64.media.tumblr.com/poster.jpg' }], embedHtmlIgnored: true },
     ],
     layout: [],
     trail: [{ blogName: 't', content: [{ kind: 'image', media: [{ url: 'https://64.media.tumblr.com/trail.png' }] }], layout: [], unknowns: [] }],
     unknowns: [],
   };
 
-  it('collects selected image and poster candidates across root and trail', () => {
+  it('collects selected image, audio, video, and poster candidates across root and trail', () => {
     const plan = collectMediaPlan(post);
     expect(plan.map((p) => p.url)).toEqual([
       'https://64.media.tumblr.com/a.gif',
+      'https://a.tumblr.com/x.mp3',
+      'https://64.media.tumblr.com/poster.jpg',
+      'https://v.tumblr.com/x.mp4',
       'https://64.media.tumblr.com/poster.jpg',
       'https://64.media.tumblr.com/trail.png',
     ]);

@@ -70,9 +70,10 @@ async function progress(phase: 'extracting' | 'downloading' | 'generating' | 'sa
   try { await browser.runtime.sendMessage({ type: MessageType.EXPORT_PROGRESS, payload: { phase, message } } satisfies ExtensionMessage); } catch { /* popup may be closed */ }
 }
 
-async function handleExport(): Promise<ExportResultPayload> {
+async function handleExport(options: { embedMedia?: boolean } = {}): Promise<ExportResultPayload> {
   const tab = await getActiveTab();
   if (!tab?.id) return { ok: false, message: 'No active tab.', errorCode: 'UNSUPPORTED_CONTEXT' };
+  const embedMedia = !!options.embedMedia;
   await progress('extracting', 'Extracting and parsing the viewed post');
   let prepared: ExtensionMessage;
   try {
@@ -87,7 +88,7 @@ async function handleExport(): Promise<ExportResultPayload> {
 
   const planCount = prepared.payload.mediaPlan?.length ?? 0;
   await progress('downloading', `Downloading ${planCount} media item(s)`);
-  const result = await runExportPipeline(prepared.payload.post, prepared.payload.mediaPlan ?? [], fetch.bind(globalThis));
+  const result = await runExportPipeline(prepared.payload.post, prepared.payload.mediaPlan ?? [], fetch.bind(globalThis), { embedMedia });
   if (!result.ok || !result.bytes || !result.filename) {
     return { ok: false, message: result.error || 'Export failed.', warnings: [...prepared.payload.diagnostics, ...result.diagnostics, ...result.warnings], errorCode: result.errorCode || 'EPUB_GENERATION_FAILED' };
   }
@@ -132,7 +133,7 @@ browser.runtime.onMessage.addListener(async (message: ExtensionMessage) => {
   }
 
   if (message.type === MessageType.EXPORT_CURRENT_POST) {
-    const payload = await handleExport();
+    const payload = await handleExport(message.payload ?? {});
     return { type: MessageType.EXPORT_RESULT, payload } satisfies ExtensionMessage;
   }
 

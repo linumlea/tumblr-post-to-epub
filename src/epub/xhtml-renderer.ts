@@ -22,6 +22,7 @@ export interface RenderOptions {
   includeTrail?: boolean;
   includeTags?: boolean;
   cssHref?: string;
+  embedMedia?: boolean;
   /** Maps original remote media URL to a local EPUB-relative path (e.g. assets/image-001.gif). */
   resolveMediaUrl?: (originalUrl: string) => string | undefined;
 }
@@ -37,6 +38,7 @@ const DEFAULT_OPTIONS = {
   includeTrail: true,
   includeTags: true,
   cssHref: '../styles/style.css',
+  embedMedia: false,
   resolveMediaUrl: undefined as ((originalUrl: string) => string | undefined) | undefined,
 };
 
@@ -55,7 +57,7 @@ function safeUrl(raw: string | null | undefined): string | undefined {
   if (!trimmed) return undefined;
   if (/^(https?:|mailto:)/i.test(trimmed)) return trimmed;
   // Allow relative local asset paths used by placeholder/media pipeline.
-  if (/^(assets\/|\.\/)/.test(trimmed) && !trimmed.includes('..')) return trimmed;
+  if (/^(?:\.\.?\/|assets\/)/.test(trimmed)) return trimmed;
   return undefined;
 }
 
@@ -237,9 +239,41 @@ function renderLinkBlock(block: LinkBlock): string {
   return parts.join('');
 }
 
-function renderProviderBlock(kind: 'audio' | 'video', title: string | undefined, provider: string | undefined, url: string | null | undefined, poster: MediaCandidate[] | undefined, extra: string[], diagnostics: string[], scope: string, blockIndex: number, resolve?: (url: string) => string | undefined): string {
+function renderProviderBlock(
+  kind: 'audio' | 'video',
+  title: string | undefined,
+  provider: string | undefined,
+  url: string | null | undefined,
+  poster: MediaCandidate[] | undefined,
+  extra: string[],
+  diagnostics: string[],
+  scope: string,
+  blockIndex: number,
+  resolve?: (url: string) => string | undefined,
+  embedMedia = false,
+): string {
   const href = safeUrl(url ?? undefined);
   const chosenPoster = poster?.length ? bestMedia(poster) : undefined;
+  const posterSrc = chosenPoster ? mediaPlaceholderUrl(scope, blockIndex, 0, chosenPoster, resolve) : undefined;
+  const mediaUrl = url && embedMedia ? resolve?.(url) : undefined;
+
+  if (embedMedia && mediaUrl && safeUrl(mediaUrl)) {
+    const parts = [`<figure class="media-block ${kind}-block">`];
+    if (kind === 'audio') {
+      parts.push(`<audio controls="controls" preload="metadata" src="${esc(mediaUrl)}"></audio>`);
+    } else {
+      parts.push(`<video controls="controls" preload="metadata" src="${esc(mediaUrl)}"${posterSrc ? ` poster="${esc(posterSrc)}"` : ''}></video>`);
+    }
+    const cap: string[] = [];
+    cap.push(`<strong>${esc(title || (kind === 'audio' ? 'Audio' : 'Video'))}</strong>`);
+    if (provider) cap.push(esc(provider));
+    if (href) cap.push(`<a href="${esc(href)}">Original ${kind}</a>`);
+    parts.push(`<figcaption>${cap.join(' · ')}${extra.length ? `<div class="post-meta">${extra.map(esc).join(' · ')}</div>` : ''}</figcaption>`);
+    parts.push(`</figure>`);
+    diagnostics.push(`${kind} block embedded as local EPUB media because the setting is enabled.`);
+    return parts.join('');
+  }
+
   const parts = [`<figure class="media-block ${kind}-block">`];
   if (chosenPoster) {
     parts.push(`<img src="${esc(mediaPlaceholderUrl(scope, blockIndex, 0, chosenPoster, resolve))}" alt="${esc(title || kind)} poster"/>`);
@@ -254,13 +288,15 @@ function renderProviderBlock(kind: 'audio' | 'video', title: string | undefined,
   return parts.join('');
 }
 
-function renderAudioBlock(block: AudioBlock, diagnostics: string[], scope: string, blockIndex: number, resolve?: (url: string) => string | undefined): string {
+function renderAudioBlock(block: AudioBlock, diagnostics: string[], scope: string, blockIndex: number, resolve?: (url: string) => string | undefined, embedMedia = false): string {
   const extra = [block.artist, block.album].filter(Boolean) as string[];
-  return renderProviderBlock('audio', block.title, block.provider, block.url, block.poster, extra, diagnostics, scope, blockIndex, resolve);
+  const sourceUrl = block.media?.url ?? block.url ?? undefined;
+  return renderProviderBlock('audio', block.title, block.provider, sourceUrl, block.poster, extra, diagnostics, scope, blockIndex, resolve, embedMedia);
 }
 
-function renderVideoBlock(block: VideoBlock, diagnostics: string[], scope: string, blockIndex: number, resolve?: (url: string) => string | undefined): string {
-  return renderProviderBlock('video', undefined, block.provider, block.url, block.poster?.length ? block.poster : block.filmstrip ? [block.filmstrip] : undefined, [], diagnostics, scope, blockIndex, resolve);
+function renderVideoBlock(block: VideoBlock, diagnostics: string[], scope: string, blockIndex: number, resolve?: (url: string) => string | undefined, embedMedia = false): string {
+  const sourceUrl = block.media?.url ?? block.url ?? undefined;
+  return renderProviderBlock('video', undefined, block.provider, sourceUrl, block.poster?.length ? block.poster : block.filmstrip ? [block.filmstrip] : undefined, [], diagnostics, scope, blockIndex, resolve, embedMedia);
 }
 
 function renderPollBlock(block: PollBlock): string {
@@ -278,16 +314,16 @@ function renderUnknownBlock(block: UnknownBlock, diagnostics: string[]): string 
   return `<div class="block-fallback"><p><strong>Unsupported content block</strong>: ${esc(block.originalType)}</p>${block.textFallback ? `<p>${esc(block.textFallback)}</p>` : ''}</div>`;
 }
 
-function renderNonTextBlock(block: NormalizedBlock, diagnostics: string[], scope: string, blockIndex: number, resolve?: (url: string) => string | undefined): string {
+function renderNonTextBlock(block: NormalizedBlock, diagnostics: string[], scope: string, blockIndex: number, resolve?: (url: string) => string | undefined, embedMedia = false): string {
   switch (block.kind) {
     case 'image':
       return renderImageBlock(block, scope, blockIndex, resolve);
     case 'link':
       return renderLinkBlock(block);
     case 'audio':
-      return renderAudioBlock(block, diagnostics, scope, blockIndex, resolve);
+      return renderAudioBlock(block, diagnostics, scope, blockIndex, resolve, embedMedia);
     case 'video':
-      return renderVideoBlock(block, diagnostics, scope, blockIndex, resolve);
+      return renderVideoBlock(block, diagnostics, scope, blockIndex, resolve, embedMedia);
     case 'poll':
       return renderPollBlock(block);
     case 'paywall':
@@ -320,7 +356,7 @@ function askLayout(layouts: NormalizedLayout[]): Extract<NormalizedLayout, { typ
   return layouts.find((l): l is Extract<NormalizedLayout, { type: 'ask' }> => l.type === 'ask');
 }
 
-export function renderContentBlocks(blocks: NormalizedBlock[], layouts: NormalizedLayout[], diagnostics: string[], scope: string, resolve?: (url: string) => string | undefined): string {
+export function renderContentBlocks(blocks: NormalizedBlock[], layouts: NormalizedLayout[], diagnostics: string[], scope: string, resolve?: (url: string) => string | undefined, embedMedia = false): string {
   const state: RenderState = { list: null };
   const rows = rowsLayoutIndices(layouts);
   const condensed = condensedLayouts(layouts);
@@ -344,7 +380,7 @@ export function renderContentBlocks(blocks: NormalizedBlock[], layouts: Normaliz
     rendered.add(i);
     const block = blocks[i];
     if (block.kind === 'text') html += renderTextBlock(block, state);
-    else html += flushList(state) + renderNonTextBlock(block, diagnostics, scope, i, resolve);
+    else html += flushList(state) + renderNonTextBlock(block, diagnostics, scope, i, resolve, embedMedia);
     return html;
   };
 
@@ -356,7 +392,7 @@ export function renderContentBlocks(blocks: NormalizedBlock[], layouts: Normaliz
       rendered.add(idx);
       const block = blocks[idx];
       if (block.kind === 'text') askHtml += renderTextBlock(block, askState);
-      else askHtml += flushList(askState) + renderNonTextBlock(block, diagnostics, scope, idx, resolve);
+      else askHtml += flushList(askState) + renderNonTextBlock(block, diagnostics, scope, idx, resolve, embedMedia);
     }
     askHtml += flushList(askState) + `</section>`;
     out += askHtml;
@@ -417,12 +453,22 @@ function renderTrailAttribution(trail: NormalizedTrailEntry): string {
   return `<div class="trail-attribution">${nameHtml}${meta.length ? ` <span class="post-meta">(${meta.join(' · ')})</span>` : ''}</div>`;
 }
 
-function renderTrail(trail: NormalizedTrailEntry[], diagnostics: string[], scopePrefix: string, resolve?: (url: string) => string | undefined): string {
+function renderTrailSourceMeta(trail: NormalizedTrailEntry): string {
+  const sourceUrl = safeUrl(trail.sourceUrl);
+  const sourceTitle = trail.sourceTitle?.trim();
+  if (!sourceUrl && !sourceTitle) return '';
+  const label = esc(sourceTitle || 'Original source');
+  const link = sourceUrl ? `<a href="${esc(sourceUrl)}">${label}</a>` : label;
+  return `<div class="post-meta">Original source: ${link}</div>`;
+}
+
+function renderTrail(trail: NormalizedTrailEntry[], diagnostics: string[], scopePrefix: string, resolve?: (url: string) => string | undefined, embedMedia = false): string {
   return trail
     .filter((t) => t.content.length > 0 || t.layout.length > 0)
     .map((t, i) => {
-      const inner = renderContentBlocks(t.content, t.layout, diagnostics, `${scopePrefix}-trail-${i + 1}`, resolve);
-      return `<section class="trail-entry">${renderTrailAttribution(t)}<div class="post-content">${inner}</div></section>`;
+      const inner = renderContentBlocks(t.content, t.layout, diagnostics, `${scopePrefix}-trail-${i + 1}`, resolve, embedMedia);
+      const sourceMeta = renderTrailSourceMeta(t);
+      return `<section class="trail-entry">${renderTrailAttribution(t)}${sourceMeta ? `${sourceMeta}` : ''}<div class="post-content">${inner}</div></section>`;
     })
     .join('');
 }
@@ -430,6 +476,7 @@ function renderTrail(trail: NormalizedTrailEntry[], diagnostics: string[], scope
 export function renderPostBodyXhtml(post: NormalizedPost, options: RenderOptions = {}): { body: string; diagnostics: string[] } {
   const opts = { ...DEFAULT_OPTIONS, ...options };
   const resolve = opts.resolveMediaUrl;
+  const embedMedia = !!opts.embedMedia;
   const diagnostics: string[] = [];
   let body = `<main><article class="tumblr-post">`;
 
@@ -447,7 +494,8 @@ export function renderPostBodyXhtml(post: NormalizedPost, options: RenderOptions
   const originUrl = safeUrl(post.sourceUrl);
   if (originUrl || post.sourceTitle) {
     const originLabel = esc(post.sourceTitle || 'Original source');
-    headerMeta += `<p class="post-meta">Original source: ${originUrl ? `<a href="${esc(originUrl)}">${originLabel}</a>` : originLabel}</p>`;
+    const originHtml = originUrl ? `<a href="${esc(originUrl)}">${originLabel}</a>` : originLabel;
+    headerMeta += `<p class="post-meta">Original source: ${originHtml}</p>`;
   }
 
   const hasRoot = post.content.length > 0;
@@ -460,11 +508,11 @@ export function renderPostBodyXhtml(post: NormalizedPost, options: RenderOptions
   body += `<header class="post-header"><h1 class="post-title">${esc(postTitle(post))}</h1>${hasTrail ? '' : headerMeta}</header>`;
 
   if (hasRoot && !hasTrail) {
-    body += `<section class="post-content post-root-content">${renderContentBlocks(post.content, post.layout, diagnostics, 'root', resolve)}</section>`;
+    body += `<section class="post-content post-root-content">${renderContentBlocks(post.content, post.layout, diagnostics, 'root', resolve, embedMedia)}</section>`;
     if (tagsHtml) body += `<footer class="post-footer post-header">${tagsHtml}</footer>`;
   }
   if (hasTrail) {
-    body += renderTrail(post.trail, diagnostics, 'trail', resolve);
+    body += renderTrail(post.trail, diagnostics, 'trail', resolve, embedMedia);
   }
   if (hasRoot && hasTrail) {
     const authorText = [post.blogName, post.blogTitle].filter(Boolean).join(' — ') || post.blogName || 'Addition';
@@ -477,8 +525,25 @@ export function renderPostBodyXhtml(post: NormalizedPost, options: RenderOptions
     const addedWhen = formatTimestamp(post.timestamp, post.date);
     const idHtml = post.id ? (url ? `<a href="${esc(url)}">#${esc(post.id)}</a>` : `#${esc(post.id)}`) : '';
     const additionMeta = [addedWhen ? esc(addedWhen) : '', idHtml].filter(Boolean).join(' · ');
-    body += `<section class="trail-entry post-addition"><div class="trail-attribution">${author}${additionMeta ? ` <span class="post-meta">(${additionMeta})</span>` : ''}</div><div class="post-content">${renderContentBlocks(post.content, post.layout, diagnostics, 'root', resolve)}${headerMeta ? `<div class="post-footer-meta">${headerMeta}</div>` : ''}</div></section>`;
+    const originalSourceMeta = originUrl || post.sourceTitle ? `<div class="post-meta">Original source: ${originUrl ? `<a href="${esc(originUrl)}">${esc(post.sourceTitle || 'Original source')}</a>` : esc(post.sourceTitle || 'Original source')}</div>` : '';
+    body += `<section class="trail-entry post-addition"><div class="trail-attribution">${author}${additionMeta ? ` <span class="post-meta">(${additionMeta})</span>` : ''}</div>${originalSourceMeta ? `${originalSourceMeta}` : ''}<div class="post-content">${renderContentBlocks(post.content, post.layout, diagnostics, 'root', resolve, embedMedia)}${headerMeta ? `<div class="post-footer-meta">${headerMeta}</div>` : ''}</div></section>`;
     diagnostics.push('Root content rendered after trail as the exporting blog\'s addition (reblog chronology).');
+  } else if (hasTrail && (headerMeta || originUrl || post.sourceTitle)) {
+    const authorText = [post.blogName, post.blogTitle].filter(Boolean).join(' — ') || post.blogName || 'Addition';
+    const authorHref = post.blogName
+      ? post.blogUrl
+        ? safeUrl(post.blogUrl)
+        : safeUrl(`https://www.tumblr.com/${encodeURIComponent(post.blogName)}`)
+      : undefined;
+    const author = authorHref ? `<a href="${esc(authorHref)}">${esc(authorText)}</a>` : esc(authorText);
+    const addedWhen = formatTimestamp(post.timestamp, post.date);
+    const idHtml = post.id ? (url ? `<a href="${esc(url)}">#${esc(post.id)}</a>` : `#${esc(post.id)}`) : '';
+    const additionMeta = [addedWhen ? esc(addedWhen) : '', idHtml].filter(Boolean).join(' · ');
+    const originalSourceMeta = originUrl || post.sourceTitle ? `<div class="post-meta">Original source: ${originUrl ? `<a href="${esc(originUrl)}">${esc(post.sourceTitle || 'Original source')}</a>` : esc(post.sourceTitle || 'Original source')}</div>` : '';
+    const footerMeta = headerMeta && !originUrl && !post.sourceTitle ? `<div class="post-footer-meta">${headerMeta}</div>` : '';
+    const sourceBlock = originalSourceMeta ? `${originalSourceMeta}${footerMeta}` : footerMeta;
+    body += `<section class="trail-entry post-addition"><div class="trail-attribution">${author}${additionMeta ? ` <span class="post-meta">(${additionMeta})</span>` : ''}</div>${sourceBlock || ''}</section>`;
+    diagnostics.push('Root metadata rendered in the original-post section when the reblog chain has no root content blocks.');
   } else if (hasTrail && headerMeta) {
     body += `<footer class="post-footer post-header">${headerMeta}</footer>`;
   }
