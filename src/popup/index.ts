@@ -9,6 +9,7 @@ function setStatus(text: string, detail = '', enabled = false): void {
   statusEl.textContent = text;
   detailEl.textContent = detail;
   debugBtn.disabled = !enabled;
+  debugBtn.textContent = enabled ? 'View details' : 'Details unavailable';
   exportBtn.disabled = !enabled;
 }
 

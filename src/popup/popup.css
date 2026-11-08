@@ -8,6 +8,7 @@ body {
 .popup {
   width: 320px;
   padding: 12px;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -17,21 +18,33 @@ h1 {
 
 .status {
   margin: 0 0 10px;
+  color: #1f2937;
 }
 
 button {
   width: 100%;
-  padding: 8px 10px;
-  border: 0;
+  padding: 9px 10px;
+  border: 1px solid transparent;
   border-radius: 6px;
-  background: #35465c;
-  color: #fff;
+  background: #1f4e79;
+  color: #ffffff;
+  font-weight: 600;
   cursor: pointer;
 }
 
+button:hover:not(:disabled) {
+  background: #163d5e;
+}
+
 button:focus-visible {
-  outline: 2px solid #1f2937;
+  outline: 2px solid #0f172a;
   outline-offset: 2px;
+}
+
+button:disabled {
+  background: #d1d5db;
+  color: #4b5563;
+  cursor: not-allowed;
 }
 
 .actions {
@@ -43,9 +56,13 @@ button.secondary {
   background: #5f6f82;
 }
 
+button.secondary:hover:not(:disabled) {
+  background: #48596c;
+}
+
 .detail {
   margin: 10px 0 0;
-  color: #4b5563;
+  color: #374151;
   white-space: pre-wrap;
   max-height: 180px;
   overflow: auto;
