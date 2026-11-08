@@ -53,13 +53,18 @@ The build output is created in `dist/` and includes the manifest and icons requi
 - **Export as EPUB** downloads a `.epub` file. Review warnings in the popup if some media could not be packaged.
 - Content scripts run on live `*.tumblr.com` pages; saved `file://` pages and view-source pages are not supported.
 
-## Privacy and security
+## Privacy, security, and telemetry
 
-- The add-on uses your existing Tumblr session to read the page and access Tumblr-hosted media for the export.
-- It does not ask for Tumblr credentials or store authentication tokens.
-- No telemetry, analytics, or external upload service is used.
+This extension is intended for personal archiving. It does not send your Tumblr login session, account data, browsing data, or extracted post metadata to a third-party service.
+
+- The extension only operates on the Tumblr post currently open in the browser and reads the page content needed to export that post.
+- It downloads media from Tumblr-hosted URLs required to package the EPUB. This is the same network access Tumblr already performs to serve the page/media you are viewing.
+- The extension does not collect telemetry, analytics, crash reports, or usage counters. It does not transmit the list of posts you export or the content of those posts to a remote server.
+- It does not store Tumblr login tokens or credentials. No authentication data is saved by the add-on itself.
 - Tumblr-provided HTML or scripts are not injected into the add-on UI or generated EPUB document.
 - Sanitized fixtures in `tests/fixtures/` exclude sensitive user, session, account, or ad data.
+
+In other words: if you open a Tumblr post in Firefox and use the extension to export it, the page and media are already being fetched by Tumblr and the browser; the add-on does not add a separate remote data collection layer beyond the normal Tumblr page/media requests it needs for the local archive export.
 
 ## Permissions
 
