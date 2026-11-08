@@ -73,7 +73,7 @@ async function progress(phase: 'extracting' | 'downloading' | 'generating' | 'sa
 async function handleExport(): Promise<ExportResultPayload> {
   const tab = await getActiveTab();
   if (!tab?.id) return { ok: false, message: 'No active tab.', errorCode: 'UNSUPPORTED_CONTEXT' };
-  await progress('extracting', 'Extracting and parsing the viewed post…');
+  await progress('extracting', 'Extracting and parsing the viewed post');
   let prepared: ExtensionMessage;
   try {
     prepared = await browser.tabs.sendMessage(tab.id, { type: MessageType.PREPARE_EXPORT } satisfies ExtensionMessage) as ExtensionMessage;
@@ -86,13 +86,13 @@ async function handleExport(): Promise<ExportResultPayload> {
   }
 
   const planCount = prepared.payload.mediaPlan?.length ?? 0;
-  await progress('downloading', `Downloading ${planCount} media item(s)…`);
+  await progress('downloading', `Downloading ${planCount} media item(s)`);
   const result = await runExportPipeline(prepared.payload.post, prepared.payload.mediaPlan ?? [], fetch.bind(globalThis));
   if (!result.ok || !result.bytes || !result.filename) {
     return { ok: false, message: result.error || 'Export failed.', warnings: [...prepared.payload.diagnostics, ...result.diagnostics, ...result.warnings], errorCode: result.errorCode || 'EPUB_GENERATION_FAILED' };
   }
 
-  await progress('saving', `Saving ${result.filename}…`);
+  await progress('saving', `Saving ${result.filename}`);
   try {
     await downloadEpub(result.filename, result.bytes);
   } catch (error) {

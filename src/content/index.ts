@@ -1,4 +1,4 @@
-import { MessageType, type ExtensionMessage, type ExtractionResultPayload, type ExportPreparedPayload, type PostStatusPayload } from '../shared/messages';
+﻿import { MessageType, type ExtensionMessage, type ExtractionResultPayload, type ExportPreparedPayload, type PostStatusPayload } from '../shared/messages';
 import { discoverEmbeddedPostGroups } from './embedded-json-extractor';
 import { extractDomFallback } from './dom-fallback-extractor';
 import { deriveMatchInput, detectBodyLocation, matchViewedPost, sanitizePost, summarizeExtraction } from '../tumblr/extract';
@@ -17,7 +17,7 @@ function detectTumblrPost(): PostStatusPayload {
   if (isLikelyPermalink) {
     return {
       status: 'ready',
-      message: 'Tumblr post context detected. Export will download referenced media and package EPUB (Phases 5–7 in progress).',
+      message: 'Tumblr post context detected. Export will download referenced media and package EPUB.',
       canonicalUrl: location.href,
     };
   }

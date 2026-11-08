@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+﻿import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { parseSanitizedPost } from '../../src/tumblr/parser';
@@ -13,7 +13,7 @@ function normalized(name: string): NormalizedPost {
   return parseSanitizedPost(fixture(name)).post;
 }
 
-describe('XHTML renderer (Phase 4)', () => {
+describe('XHTML renderer', () => {
   it('escapes text and never injects embed HTML', () => {
     const post = normalized('audio-rows.json');
     // Mutate a text block to prove escaping; audio block must not render embed HTML.

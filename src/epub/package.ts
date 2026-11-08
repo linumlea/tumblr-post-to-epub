@@ -53,13 +53,19 @@ export function packageEpub(opts: PackageEpubOptions): Uint8Array {
 </container>
 `;
   const opf = `<?xml version="1.0" encoding="UTF-8"?>
-<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid" xml:lang="${escXml(lang)}">
+<package xmlns="http://www.idpf.org/2007/opf" xmlns:schema="http://schema.org/" version="3.0" unique-identifier="bookid" xml:lang="${escXml(lang)}">
   <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
     <dc:identifier id="bookid">${escXml(id)}</dc:identifier>
     <dc:title>${escXml(title)}</dc:title>
     <dc:language>${escXml(lang)}</dc:language>
     ${opts.sourceUrl ? `<dc:source>${escXml(opts.sourceUrl)}</dc:source>` : ''}
     <meta property="dcterms:modified">${new Date().toISOString().replace(/\.\d{3}Z$/, 'Z')}</meta>
+    <meta property="schema:accessMode">textual</meta>
+    <meta property="schema:accessModeSufficient">textual</meta>
+    <meta property="schema:accessibilityFeature">alternativeText</meta>
+    <meta property="schema:accessibilityFeature">readingOrder</meta>
+    <meta property="schema:accessibilityHazard">noFlashingHazard</meta>
+    <meta property="schema:accessibilitySummary">Exported Tumblr post with semantic XHTML, headings, links, and alternative text for media where available.</meta>
   </metadata>
   <manifest>
 ${manifestItems}

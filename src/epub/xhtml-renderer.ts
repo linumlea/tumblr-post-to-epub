@@ -203,7 +203,6 @@ function mediaPlaceholderUrl(scope: string, blockIndex: number, candidateIndex: 
     if (resolved) return resolved;
   }
   const extFromDeclared = media?.declaredType?.split('/')[1]?.replace(/[^a-z0-9]/gi, '') || 'bin';
-  // Placeholder local path; Phase 5/6 pipeline should provide resolveMediaUrl with real downloaded assets.
   return `assets/${scope}-block-${blockIndex + 1}-${candidateIndex + 1}.${extFromDeclared || 'bin'}`;
 }
 

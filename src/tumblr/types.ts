@@ -1,4 +1,4 @@
-// Initial TypeScript types for Tumblr extraction/parser/EPUB planning.
+﻿// Initial TypeScript types for Tumblr extraction/parser/EPUB planning.
 // These are intentionally permissive in raw areas and normalized in internal
 // areas. The NPF spec evolves; preserve unknown data instead of discarding it.
 
@@ -110,7 +110,7 @@ export interface RawMedia extends JsonObject {
   altText?: string;
 }
 
-// Normalized internal model — parser output (Phase 3+). Keep raw references for
+// Normalized internal model — parser output. Keep raw references for
 // diagnostics/future support; never include sensitive session/user data.
 
 export interface NormalizedPost {
