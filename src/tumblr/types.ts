@@ -118,6 +118,7 @@ export interface NormalizedPost {
   idString?: string;
   blogName?: string;
   blogTitle?: string;
+  blogUrl?: string;
   url?: string;
   canonicalUrl?: string;
   slug?: string;

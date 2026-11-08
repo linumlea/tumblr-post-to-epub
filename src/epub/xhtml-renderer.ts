@@ -398,11 +398,24 @@ export function renderContentBlocks(blocks: NormalizedBlock[], layouts: Normaliz
 function renderTrailAttribution(trail: NormalizedTrailEntry): string {
   const who = [trail.blogName, trail.blogTitle].filter(Boolean).join(' — ');
   const when = formatTimestamp(trail.timestamp, undefined);
-  const name = trail.brokenBlogName ? esc(trail.brokenBlogName) : esc(who || 'Unknown blog');
+  const blogName = trail.blogName || trail.brokenBlogName || 'Unknown blog';
+  const blogHref = trail.brokenBlogName
+    ? undefined
+    : trail.blogUrl
+      ? safeUrl(trail.blogUrl)
+      : trail.blogName
+        ? safeUrl(`https://www.tumblr.com/${encodeURIComponent(trail.blogName)}`)
+        : undefined;
+  const nameHtml = blogHref ? `<a href="${esc(blogHref)}">${esc(trail.brokenBlogName ? trail.brokenBlogName : (who || blogName))}</a>` : esc(trail.brokenBlogName ? trail.brokenBlogName : (who || blogName));
+  const postId = trail.postId;
+  const postHref = trail.blogName && postId
+    ? safeUrl(`https://www.tumblr.com/${encodeURIComponent(trail.blogName)}/${postId}`)
+    : undefined;
+  const idHtml = postId ? (postHref ? `<a href="${esc(postHref)}">#${esc(postId)}</a>` : `#${esc(postId)}`) : '';
   const meta: string[] = [];
   if (when) meta.push(esc(when));
-  if (trail.postId) meta.push(`#${esc(trail.postId)}`);
-  return `<div class="trail-attribution">${name}${meta.length ? ` <span class="post-meta">(${meta.join(' · ')})</span>` : ''}</div>`;
+  if (idHtml) meta.push(idHtml);
+  return `<div class="trail-attribution">${nameHtml}${meta.length ? ` <span class="post-meta">(${meta.join(' · ')})</span>` : ''}</div>`;
 }
 
 function renderTrail(trail: NormalizedTrailEntry[], diagnostics: string[], scopePrefix: string, resolve?: (url: string) => string | undefined): string {
@@ -422,10 +435,13 @@ export function renderPostBodyXhtml(post: NormalizedPost, options: RenderOptions
   let body = `<main><article class="tumblr-post">`;
 
   const meta: string[] = [];
-  if (post.blogName) meta.push(esc(post.blogName));
+  if (post.blogName) {
+    const blogHref = post.blogUrl ? safeUrl(post.blogUrl) : safeUrl(`https://www.tumblr.com/${encodeURIComponent(post.blogName)}`);
+    meta.push(blogHref ? `<a href="${esc(blogHref)}">${esc(post.blogName)}</a>` : esc(post.blogName));
+  }
   const when = formatTimestamp(post.timestamp, post.date);
   if (when) meta.push(esc(when));
-  const url = safeUrl(post.canonicalUrl || post.url);
+  const url = safeUrl(post.url || post.canonicalUrl);
   let headerMeta = '';
   if (meta.length) headerMeta += `<p class="post-meta">${meta.join(' · ')}${url ? ` · <a href="${esc(url)}">Source</a>` : ''}</p>`;
   else if (url) headerMeta += `<p class="post-meta"><a href="${esc(url)}">Source</a></p>`;
@@ -452,9 +468,16 @@ export function renderPostBodyXhtml(post: NormalizedPost, options: RenderOptions
     body += renderTrail(post.trail, diagnostics, 'trail', resolve);
   }
   if (hasRoot && hasTrail) {
-    const author = esc([post.blogName, post.blogTitle].filter(Boolean).join(' — ') || post.blogName || 'Addition');
+    const authorText = [post.blogName, post.blogTitle].filter(Boolean).join(' — ') || post.blogName || 'Addition';
+    const authorHref = post.blogName
+      ? post.blogUrl
+        ? safeUrl(post.blogUrl)
+        : safeUrl(`https://www.tumblr.com/${encodeURIComponent(post.blogName)}`)
+      : undefined;
+    const author = authorHref ? `<a href="${esc(authorHref)}">${esc(authorText)}</a>` : esc(authorText);
     const addedWhen = formatTimestamp(post.timestamp, post.date);
-    const additionMeta = [addedWhen ? esc(addedWhen) : '', post.id ? `#${esc(post.id)}` : ''].filter(Boolean).join(' · ');
+    const idHtml = post.id ? (url ? `<a href="${esc(url)}">#${esc(post.id)}</a>` : `#${esc(post.id)}`) : '';
+    const additionMeta = [addedWhen ? esc(addedWhen) : '', idHtml].filter(Boolean).join(' · ');
     body += `<section class="trail-entry post-addition"><div class="trail-attribution">${author}${additionMeta ? ` <span class="post-meta">(${additionMeta})</span>` : ''}</div><div class="post-content">${renderContentBlocks(post.content, post.layout, diagnostics, 'root', resolve)}${headerMeta ? `<div class="post-footer-meta">${headerMeta}</div>` : ''}</div></section>`;
     diagnostics.push('Root content rendered after trail as the exporting blog\'s addition (reblog chronology).');
   } else if (hasTrail && headerMeta) {

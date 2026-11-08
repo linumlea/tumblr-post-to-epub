@@ -209,6 +209,7 @@ export function parseSanitizedPost(post: SanitizedPost): { post: NormalizedPost;
     idString: post.idString,
     blogName: post.blogName,
     blogTitle: str((post.blog as any)?.title),
+    blogUrl: str((post.blog as any)?.url),
     url: post.postUrl,
     canonicalUrl: post.canonicalUrl,
     slug: post.slug,
