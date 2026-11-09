@@ -254,6 +254,6 @@ describe('XHTML renderer', () => {
     expect(html).toContain('Original source:');
     expect(html).toContain('href="https://www.tiktok.com/t/ZThfmyW8w/"');
     expect(html).toContain('tiktok.com');
-    expect(html.indexOf('Original source:')).toBeGreaterThan(html.indexOf('Reblog text'));
+    expect(html.indexOf('Original source:')).toBeLessThan(html.indexOf('Reblog text'));
   });
 });

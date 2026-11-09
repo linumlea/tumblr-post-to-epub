@@ -19,11 +19,13 @@ function walkBlocks(blocks: NormalizedBlock[], sourcePath: string, out: MediaPla
     if (block.kind === 'image') {
       pushCandidates(out, block.media, 'image', p);
     } else if (block.kind === 'audio') {
-      const audioMedia = block.media ? [block.media] : (block.url ? [{ url: block.url, declaredType: block.media?.declaredType }] : undefined);
+      const mediaDeclaredType = block.media == null ? undefined : block.media.declaredType;
+      const audioMedia = block.media ? [block.media] : (block.url ? [{ url: block.url, declaredType: mediaDeclaredType }] : undefined);
       pushCandidates(out, audioMedia, 'audio', `${p}/media`);
       pushCandidates(out, block.poster, 'poster', `${p}/poster`);
     } else if (block.kind === 'video') {
-      const videoMedia = block.media ? [block.media] : (block.url ? [{ url: block.url, declaredType: block.media?.declaredType }] : undefined);
+      const mediaDeclaredType = block.media == null ? undefined : block.media.declaredType;
+      const videoMedia = block.media ? [block.media] : (block.url ? [{ url: block.url, declaredType: mediaDeclaredType }] : undefined);
       pushCandidates(out, videoMedia, 'video', `${p}/media`);
       pushCandidates(out, block.poster, 'poster', `${p}/poster`);
       if (!block.poster?.length) pushCandidates(out, block.filmstrip ? [block.filmstrip] : undefined, 'filmstrip', `${p}/filmstrip`);

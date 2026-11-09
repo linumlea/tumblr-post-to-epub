@@ -88,7 +88,7 @@ export function postTitle(post: NormalizedPost): string {
   return (
     post.title?.trim() ||
     post.summary?.trim() ||
-    (post.blogName ? `Post by ${post.blogName}` : 'Tumblr post')
+    'Tumblr post'
   );
 }
 
@@ -489,7 +489,8 @@ export function renderPostBodyXhtml(post: NormalizedPost, options: RenderOptions
   const meta: string[] = [];
   if (post.blogName) {
     const blogHref = post.blogUrl ? safeUrl(post.blogUrl) : safeUrl(`https://www.tumblr.com/${encodeURIComponent(post.blogName)}`);
-    meta.push(blogHref ? `<a href="${esc(blogHref)}">${esc(post.blogName)}</a>` : esc(post.blogName));
+    const blogLink = blogHref ? `<a href="${esc(blogHref)}">${esc(post.blogName)}</a>` : esc(post.blogName);
+    meta.push(`<span class="post-meta">post extracted from:</span> ${blogLink}`);
   }
   const when = formatTimestamp(post.timestamp, post.date);
   if (when) meta.push(esc(when));
@@ -498,9 +499,8 @@ export function renderPostBodyXhtml(post: NormalizedPost, options: RenderOptions
   if (meta.length) headerMeta += `<p class="post-meta">${meta.join(' · ')}${url ? ` · <a href="${esc(url)}">Source</a>` : ''}</p>`;
   else if (url) headerMeta += `<p class="post-meta"><a href="${esc(url)}">Source</a></p>`;
   const originUrl = safeUrl(post.sourceUrl);
-  if (originUrl || post.sourceTitle) {
-    headerMeta += renderSourceMeta(post.sourceUrl, post.sourceTitle, true);
-  }
+  const topSourceMeta = originUrl || post.sourceTitle ? renderSourceMeta(post.sourceUrl, post.sourceTitle, true) : '';
+  const visibleTitle = post.title?.trim() || post.summary?.trim();
 
   const hasRoot = post.content.length > 0;
   const hasTrail = opts.includeTrail && post.trail.some((t) => t.content.length || t.layout.length);
@@ -509,7 +509,7 @@ export function renderPostBodyXhtml(post: NormalizedPost, options: RenderOptions
 
   // For trail/reblog posts, place extracted-post metadata at the end so chronology reads naturally.
   // For regular posts, keep header metadata at top but place tags at the end.
-  body += `<header class="post-header"><h1 class="post-title">${esc(postTitle(post))}</h1>${hasTrail ? '' : headerMeta}</header>`;
+  body += `<header class="post-header">${visibleTitle ? `<h1 class="post-title">${esc(visibleTitle)}</h1>` : ''}${topSourceMeta ? `${topSourceMeta}` : ''}${hasTrail ? '' : headerMeta}</header>`;
 
   if (hasRoot && !hasTrail) {
     body += `<section class="post-content post-root-content">${renderContentBlocks(post.content, post.layout, diagnostics, 'root', resolve, embedMedia)}</section>`;
@@ -529,8 +529,7 @@ export function renderPostBodyXhtml(post: NormalizedPost, options: RenderOptions
     const addedWhen = formatTimestamp(post.timestamp, post.date);
     const idHtml = post.id ? (url ? `<a href="${esc(url)}">#${esc(post.id)}</a>` : `#${esc(post.id)}`) : '';
     const additionMeta = [addedWhen ? esc(addedWhen) : '', idHtml].filter(Boolean).join(' · ');
-    const originalSourceMeta = originUrl || post.sourceTitle ? `<div class="post-meta">Original source: ${originUrl ? `<a href="${esc(originUrl)}">${esc(post.sourceTitle || 'Original source')}</a>` : esc(post.sourceTitle || 'Original source')}</div>` : '';
-    body += `<section class="trail-entry post-addition"><div class="trail-attribution">${author}${additionMeta ? ` <span class="post-meta">(${additionMeta})</span>` : ''}</div>${originalSourceMeta ? `${originalSourceMeta}` : ''}<div class="post-content">${renderContentBlocks(post.content, post.layout, diagnostics, 'root', resolve, embedMedia)}${headerMeta ? `<div class="post-footer-meta">${headerMeta}</div>` : ''}</div></section>`;
+    body += `<section class="trail-entry post-addition"><div class="trail-attribution">${author} <span class="post-meta">(extracted post)</span>${additionMeta ? ` <span class="post-meta">(${additionMeta})</span>` : ''}</div><div class="post-content">${renderContentBlocks(post.content, post.layout, diagnostics, 'root', resolve, embedMedia)}${headerMeta ? `<div class="post-footer-meta">${headerMeta}</div>` : ''}</div></section>`;
     diagnostics.push('Root content rendered after trail as the exporting blog\'s addition (reblog chronology).');
   } else if (hasTrail && (headerMeta || originUrl || post.sourceTitle)) {
     const authorText = [post.blogName, post.blogTitle].filter(Boolean).join(' — ') || post.blogName || 'Addition';
@@ -543,10 +542,8 @@ export function renderPostBodyXhtml(post: NormalizedPost, options: RenderOptions
     const addedWhen = formatTimestamp(post.timestamp, post.date);
     const idHtml = post.id ? (url ? `<a href="${esc(url)}">#${esc(post.id)}</a>` : `#${esc(post.id)}`) : '';
     const additionMeta = [addedWhen ? esc(addedWhen) : '', idHtml].filter(Boolean).join(' · ');
-    const originalSourceMeta = originUrl || post.sourceTitle ? `<div class="post-meta">Original source: ${originUrl ? `<a href="${esc(originUrl)}">${esc(post.sourceTitle || 'Original source')}</a>` : esc(post.sourceTitle || 'Original source')}</div>` : '';
-    const footerMeta = headerMeta && !originUrl && !post.sourceTitle ? `<div class="post-footer-meta">${headerMeta}</div>` : '';
-    const sourceBlock = originalSourceMeta ? `${originalSourceMeta}${footerMeta}` : footerMeta;
-    body += `<section class="trail-entry post-addition"><div class="trail-attribution">${author}${additionMeta ? ` <span class="post-meta">(${additionMeta})</span>` : ''}</div>${sourceBlock || ''}</section>`;
+    const footerMeta = headerMeta ? `<div class="post-footer-meta">${headerMeta}</div>` : '';
+    body += `<section class="trail-entry post-addition"><div class="trail-attribution"><span class="post-meta">extraction point:</span> ${author} ${additionMeta ? ` <span class="post-meta">(${additionMeta})</span>` : ''}</div>${footerMeta}</section>`;
     diagnostics.push('Root metadata rendered in the original-post section when the reblog chain has no root content blocks.');
   } else if (hasTrail && headerMeta) {
     body += `<footer class="post-footer post-header">${headerMeta}</footer>`;
