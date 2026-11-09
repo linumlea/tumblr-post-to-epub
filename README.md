@@ -40,11 +40,12 @@ The build output is created in `dist/` and includes the manifest and icons requi
 
 ### Load the extension
 
-1. Open `about:debugging#/runtime/this-firefox`.
-2. Click **Load Temporary Add-on…**.
-3. Select `dist/manifest.json`.
-4. Open a Tumblr post permalink, then refresh the tab after loading or reloading the add-on.
-5. Click the extension icon and choose **Export as EPUB**.
+1. Open `about:addons`.
+2. Click the Settings cogwheel icon.
+3. Click `Install Add-on From File...`.
+4. Select the extension zip file.
+5. Open a Tumblr post permalink.
+6. Click the extension icon and choose **Export as EPUB**.
 
 ## Usage notes
 
