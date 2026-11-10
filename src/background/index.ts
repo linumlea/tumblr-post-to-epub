@@ -10,10 +10,29 @@ function errorText(error: unknown): string {
   return error instanceof Error ? `${error.name}: ${error.message}` : String(error);
 }
 
+async function missingTumblrHostPermission(): Promise<string | undefined> {
+  try {
+    const has = await browser.permissions.contains({
+      origins: ["https://*.tumblr.com/*"],
+    });
+    if (has) return undefined;
+  } catch {
+    // permission check unavailable
+  }
+  return (
+    "Tumblr access is not granted. In Firefox, open about:addons → Tumblr Post to EPUB → Permissions, " +
+    "enable access to tumblr.com (and media.tumblr.com / tumblr.co for media), reload the Tumblr tab, then try again."
+  );
+}
+
 async function sendToActiveTab(message: ExtensionMessage): Promise<ExtensionMessage> {
   const tab = await getActiveTab();
   if (!tab?.id) {
     return { type: MessageType.EXTRACTION_RESULT, payload: { ok: false, viewedUrl: '', diagnostics: ['No active tab.'], error: 'No active tab.' } } satisfies ExtensionMessage;
+  }
+  const missing = await missingTumblrHostPermission();
+  if (missing) {
+    return { type: MessageType.EXTRACTION_RESULT, payload: { ok: false, viewedUrl: tab.url ?? '', diagnostics: [missing], error: missing } } satisfies ExtensionMessage;
   }
   try {
     const response = (await browser.tabs.sendMessage(tab.id, message)) as ExtensionMessage;
@@ -76,6 +95,10 @@ async function handleExport(options: { embedMedia?: boolean } = {}): Promise<Exp
   const embedMedia = !!options.embedMedia;
   await progress('extracting', 'Extracting and parsing the viewed post');
   let prepared: ExtensionMessage;
+  const missing = await missingTumblrHostPermission();
+  if (missing) {
+    return { ok: false, message: missing, errorCode: 'HOST_PERMISSION_NOT_GRANTED' };
+  }
   try {
     prepared = await browser.tabs.sendMessage(tab.id, { type: MessageType.PREPARE_EXPORT } satisfies ExtensionMessage) as ExtensionMessage;
   } catch (error) {
@@ -118,6 +141,10 @@ browser.runtime.onMessage.addListener(async (message: ExtensionMessage) => {
   if (message.type === MessageType.GET_POST_STATUS) {
     const tab = await getActiveTab();
     if (!tab?.id) return { type: MessageType.POST_STATUS, payload: { status: 'error', message: 'No active tab.' } } satisfies ExtensionMessage;
+    const missing = await missingTumblrHostPermission();
+    if (missing) {
+      return { type: MessageType.POST_STATUS, payload: { status: 'error', message: missing, canonicalUrl: tab.url } } satisfies ExtensionMessage;
+    }
     try {
       return (await browser.tabs.sendMessage(tab.id, message)) as ExtensionMessage;
     } catch (error) {
