@@ -2,6 +2,8 @@
 
 Firefox add-on that exports an individual Tumblr post as a self-contained EPUB 3 file for personal archiving. It reads the post currently open in your Tumblr session, extracts the content and available metadata, downloads Tumblr-hosted media required for the book, and saves a single `.epub` file.
 
+**[Install from Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/tumblr-post-to-epub/)**
+
 ## Features
 
 - Export the currently viewed Tumblr post from the extension popup.
